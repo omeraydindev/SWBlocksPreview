@@ -1,7 +1,6 @@
 package ma.swblockspreview.util;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class mq {
     public static Gx a(String var0, String var1) {
@@ -482,13 +481,17 @@ public class mq {
 
         switch (var1) {
             case 0:
+            case 37:
                 return "Intent";
             case 1:
             case 2:
+            case 38:
                 return "SharedPreferences";
             case 3:
+            case 39:
                 return "Calendar";
             case 4:
+            case 40:
                 return "Vibrator";
             case 5:
                 return "Timer";
@@ -553,14 +556,6 @@ public class mq {
                 return "AdView";
             case 36:
                 return "MapView";
-            case 37:
-                return "Intent";
-            case 38:
-                return "SharedPreferences";
-            case 39:
-                return "Calendar";
-            case 40:
-                return "Vibrator";
             case 41:
                 return "Timer";
             case 42:
@@ -604,16 +599,12 @@ public class mq {
         }
     }
 
-    public static ArrayList a(String var0) {
-        ArrayList var1 = new ArrayList();
-        ArrayList var2 = StringUtils.c(var0);
-        if (var2.size() <= 0) {
-            return var1;
-        } else {
-            Iterator var3 = var2.iterator();
+    public static ArrayList<Gx> a(String var0) {
+        ArrayList<Gx> var1 = new ArrayList<>();
+        ArrayList<String> var2 = StringUtils.c(var0);
+        if (var2.size() > 0) {
 
-            while (var3.hasNext()) {
-                String var4 = (String) var3.next();
+            for (String var4 : var2) {
                 if (var4.charAt(0) == 37 && var4.length() >= 2) {
                     String var5 = String.valueOf(var4.charAt(1));
                     String var6;
@@ -627,7 +618,7 @@ public class mq {
                 }
             }
 
-            return var1;
         }
+        return var1;
     }
 }

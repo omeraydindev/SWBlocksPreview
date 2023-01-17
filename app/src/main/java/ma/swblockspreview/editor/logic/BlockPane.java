@@ -6,22 +6,21 @@ import android.view.View;
 import android.widget.RelativeLayout;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 import ma.swblockspreview.bean.BlockBean;
 import ma.swblockspreview.editor.Rs;
 import ma.swblockspreview.editor.Ss;
 import ma.swblockspreview.editor.Ts;
 import ma.swblockspreview.util.Gx;
-import ma.swblockspreview.util.mq;
 import ma.swblockspreview.util.LayoutUtils;
+import ma.swblockspreview.util.mq;
 
 public class BlockPane extends RelativeLayout {
     public Context a;
     public int[] b = new int[2];
     public Ts c;
     public Rs d;
-    public ArrayList e = new ArrayList();
+    public ArrayList e = new ArrayList<>();
     public Object[] f = null;
     public int g = 10;
     public float h = LayoutUtils.getDip(getContext(), 1.0F);
@@ -128,10 +127,8 @@ public class BlockPane extends RelativeLayout {
         while (true) {
             if (var1 != null) {
                 var1.setVisibility(var2);
-                Iterator var3 = var1.V.iterator();
 
-                while (var3.hasNext()) {
-                    View var7 = (View) var3.next();
+                for (View var7 : var1.V) {
                     if (var7 instanceof Rs) {
                         a((Rs) var7, var2);
                     }
@@ -167,7 +164,7 @@ public class BlockPane extends RelativeLayout {
             if (var1 != null) {
                 if (!var1.ea) {
                     for (int var6 = 0; var6 < var1.V.size(); ++var6) {
-                        View var7 = (View) var1.V.get(var6);
+                        View var7 = var1.V.get(var6);
                         boolean var8 = var7 instanceof Rs;
                         if ((var8 || var7 instanceof Ss) && (!var8 || !var7.getTag().toString().equals(var2))) {
                             int[] var9 = new int[2];
@@ -354,20 +351,17 @@ public class BlockPane extends RelativeLayout {
     }
 
     public void a(String var1, String var2) {
-        Rs var3 = new Rs(getContext(), 0, var1, "h", var2);
-        d = var3;
-        Rs var4 = d;
-        var4.pa = this;
-        addView(var4);
+        d = new Rs(getContext(), 0, var1, "h", var2);
+        d.pa = this;
+        addView(d);
         float var5 = LayoutUtils.getDip(getContext(), 1.0F);
-        Rs var6 = d;
         float var7 = var5 * 8.0F;
-        var6.setX(var7);
+        d.setX(var7);
         d.setY(var7);
     }
 
     public void a(String str, boolean z, boolean z2, boolean z3, int i, int i2) {
-        e = new ArrayList();
+        e = new ArrayList<>();
         int i3 = (int) (3.0f * h);
         for (int i4 = 0; i4 < getChildCount(); i4++) {
             View childAt = getChildAt(i4);
@@ -454,10 +448,9 @@ public class BlockPane extends RelativeLayout {
 
     public void b(Rs var1) {
         c(var1);
-        Iterator var2 = var1.getAllChildren().iterator();
 
-        while (var2.hasNext()) {
-            removeView((Rs) var2.next());
+        for (Rs rs : var1.getAllChildren()) {
+            removeView(rs);
         }
 
     }
@@ -702,7 +695,7 @@ public class BlockPane extends RelativeLayout {
 
     public void c() {
         d();
-        e = new ArrayList();
+        e = new ArrayList<>();
         f = null;
     }
 
@@ -972,17 +965,14 @@ public class BlockPane extends RelativeLayout {
         return var2;
     }
 
-    public ArrayList getBlocks() {
-        ArrayList var1 = new ArrayList();
+    public ArrayList<BlockBean> getBlocks() {
+        ArrayList<BlockBean> var1 = new ArrayList<>();
         Rs var2 = findViewWithTag(Integer.valueOf(d.ha));
         if (var2 != null) {
-            Iterator var3 = var2.getAllChildren().iterator();
-
-            while (var3.hasNext()) {
-                var1.add(((Rs) var3.next()).getBean());
+            for (Rs rs : var2.getAllChildren()) {
+                var1.add(rs.getBean());
             }
         }
-
         return var1;
     }
 

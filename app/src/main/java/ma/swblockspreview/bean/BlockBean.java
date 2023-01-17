@@ -31,9 +31,9 @@ public class BlockBean extends SelectableBean implements Parcelable {
     public int nextBlock;
     @Expose
     public String opCode;
-    public ArrayList paramClassInfo;
+    public ArrayList<Gx> paramClassInfo;
     @Expose
-    public ArrayList parameters;
+    public ArrayList<String> parameters;
     @Expose
     public String spec;
     @Expose
@@ -46,7 +46,7 @@ public class BlockBean extends SelectableBean implements Parcelable {
     public String typeName;
 
     public BlockBean() {
-        parameters = new ArrayList();
+        parameters = new ArrayList<>();
         subStack1 = -1;
         subStack2 = -1;
         nextBlock = -1;
@@ -76,7 +76,7 @@ public class BlockBean extends SelectableBean implements Parcelable {
         type = var3;
         typeName = var4;
         opCode = var5;
-        parameters = new ArrayList();
+        parameters = new ArrayList<>();
         subStack1 = -1;
         subStack2 = -1;
         nextBlock = -1;
@@ -104,7 +104,7 @@ public class BlockBean extends SelectableBean implements Parcelable {
         typeName = var1.typeName;
         opCode = var1.opCode;
         color = var1.color;
-        parameters = new ArrayList(var1.parameters);
+        parameters = new ArrayList<>(var1.parameters);
         subStack1 = var1.subStack1;
         subStack2 = var1.subStack2;
         nextBlock = var1.nextBlock;
@@ -159,13 +159,13 @@ public class BlockBean extends SelectableBean implements Parcelable {
                     } else if (nextBlock != other.nextBlock) {
                         return false;
                     } else {
-                        ArrayList var5 = parameters;
+                        ArrayList<String> var5 = parameters;
                         if (var5 != null && var5.size() != other.parameters.size()) {
                             return false;
                         } else {
                             for (int var6 = 0; var6 < parameters.size(); ++var6) {
-                                String var7 = (String) parameters.get(var6);
-                                String var8 = (String) other.parameters.get(var6);
+                                String var7 = parameters.get(var6);
+                                String var8 = other.parameters.get(var6);
                                 if (var7 != null && !var7.equals(var8)) {
                                     return false;
                                 }

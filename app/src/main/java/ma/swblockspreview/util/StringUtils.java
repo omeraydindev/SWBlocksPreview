@@ -27,29 +27,24 @@ public class StringUtils {
         public String b() {
             c();
             boolean var1 = a();
-            String var2 = "";
-            if (var1) {
-                return var2;
-            } else {
+            StringBuilder var2 = new StringBuilder();
+            if (!var1) {
                 boolean var3 = false;
                 int var4 = b;
 
                 while (b < a.length()) {
                     if (a.charAt(b) == 32) {
-                        return var2;
+                        return var2.toString();
                     }
 
                     char var5 = a.charAt(b);
                     if (var5 == 92) {
-                        StringBuilder var6 = new StringBuilder();
-                        var6.append(var2);
-                        var6.append(var5 + a.charAt(1 + b));
-                        var2 = var6.toString();
+                        var2.append(var5 + a.charAt(1 + b));
                         b += 2;
                     } else {
                         if (var5 == 37) {
                             if (b > var4) {
-                                return var2;
+                                return var2.toString();
                             }
 
                             var3 = true;
@@ -61,20 +56,18 @@ public class StringUtils {
                             }
 
                             if (var5 == 45) {
-                                return var2;
+                                return var2.toString();
                             }
                         }
 
-                        StringBuilder var9 = new StringBuilder();
-                        var9.append(var2);
-                        var9.append(var5);
-                        var2 = var9.toString();
+                        String var9 = String.valueOf(var2) + var5;
+                        var2 = new StringBuilder(var9);
                         ++b;
                     }
                 }
 
-                return var2;
             }
+            return var2.toString();
         }
 
         public void c() {
@@ -94,10 +87,8 @@ public class StringUtils {
             if (var0 < var1 || var0 > 70) {
                 var1 = 97;
                 if (var0 < var1 || var0 > 102) {
-                    StringBuilder var2 = new StringBuilder("invalid hex digit '");
-                    var2.append(var0);
-                    var2.append("'");
-                    throw new IllegalArgumentException(var2.toString());
+                    String var2 = "invalid hex digit '" + var0 + "'";
+                    throw new IllegalArgumentException(var2);
                 }
             }
 
@@ -130,23 +121,20 @@ public class StringUtils {
                 float var5 = var1 / 1.07374182E9F;
                 return (new DecimalFormat("#.#GB")).format(var5);
             } else {
-                StringBuilder var2 = new StringBuilder();
-                var2.append(var0);
-                var2.append("B");
-                return var2.toString();
+                return var0 + "B";
             }
         }
     }
 
-    public static String a(byte[] var0) {
-        StringBuffer var1 = new StringBuffer(2 * var0.length);
+    public static String a(byte[] bytes) {
+        StringBuilder var1 = new StringBuilder(2 * bytes.length);
 
-        for (int var2 = 0; var2 < var0.length; ++var2) {
-            if ((255 & var0[var2]) < 16) {
+        for (byte b : bytes) {
+            if ((255 & b) < 16) {
                 var1.append("0");
             }
 
-            var1.append(Long.toString(255 & var0[var2], 16));
+            var1.append(Long.toString(255 & b, 16));
         }
 
         return var1.toString();
@@ -211,8 +199,8 @@ public class StringUtils {
         return (new DecimalFormat("#,###")).format(var0);
     }
 
-    public static ArrayList c(String var0) {
-        ArrayList var1 = new ArrayList();
+    public static ArrayList<String> c(String var0) {
+        ArrayList<String> var1 = new ArrayList<>();
         StringTokenizer var2 = new StringTokenizer(var0);
 
         while (!var2.a()) {
@@ -226,7 +214,7 @@ public class StringUtils {
     }
 
     public static String d(String var0) {
-        String var1 = "";
+        StringBuilder var1 = new StringBuilder();
 
         for (int var2 = 0; var2 < var0.length(); ++var2) {
             char var3 = var0.charAt(var2);
@@ -235,15 +223,12 @@ public class StringUtils {
                 var4.append(var1);
                 ++var2;
                 var4.append(var0.charAt(var2));
-                var1 = var4.toString();
+                var1 = new StringBuilder(var4.toString());
             } else {
-                StringBuilder var7 = new StringBuilder();
-                var7.append(var1);
-                var7.append(var3);
-                var1 = var7.toString();
+                var1.append(var3);
             }
         }
 
-        return var1;
+        return var1.toString();
     }
 }

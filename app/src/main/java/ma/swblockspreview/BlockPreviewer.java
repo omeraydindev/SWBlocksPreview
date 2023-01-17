@@ -59,13 +59,13 @@ public class BlockPreviewer {
     BlockPane blockPane;
 
     private void a(ArrayList<BlockBean> var1, int var2, int var3) {
-        HashMap var4 = new HashMap();
-        Iterator var5 = var1.iterator();
+        HashMap<Integer, Rs> var4 = new HashMap<>();
+        Iterator<BlockBean> var5 = var1.iterator();
         Rs var6 = null;
         boolean var7 = true;
 
         while (var5.hasNext()) {
-            Rs var21 = a((BlockBean) var5.next());
+            Rs var21 = a(var5.next());
             var4.put(Integer.valueOf(((Integer) var21.getTag()).intValue()), var21);
             BlockPane var23 = blockPane;
             var23.g = Math.max(var23.g, 1 + ((Integer) var21.getTag()).intValue());
@@ -76,7 +76,7 @@ public class BlockPreviewer {
             }
         }
 
-        Iterator var8 = var1.iterator();
+        Iterator<BlockBean> var8 = var1.iterator();
 
         while (true) {
             BlockBean var9;
@@ -88,13 +88,13 @@ public class BlockPreviewer {
                     return;
                 }
 
-                var9 = (BlockBean) var8.next();
-                var10 = (Rs) var4.get(Integer.valueOf(var9.id));
+                var9 = var8.next();
+                var10 = var4.get(Integer.valueOf(var9.id));
             } while (var10 == null);
 
             int var11 = var9.subStack1;
             if (var11 >= 0) {
-                Rs var20 = (Rs) var4.get(Integer.valueOf(var11));
+                Rs var20 = var4.get(Integer.valueOf(var11));
                 if (var20 != null) {
                     var10.e(var20);
                 }
@@ -102,7 +102,7 @@ public class BlockPreviewer {
 
             int var12 = var9.subStack2;
             if (var12 >= 0) {
-                Rs var19 = (Rs) var4.get(Integer.valueOf(var12));
+                Rs var19 = var4.get(Integer.valueOf(var12));
                 if (var19 != null) {
                     var10.f(var19);
                 }
@@ -110,7 +110,7 @@ public class BlockPreviewer {
 
             int var13 = var9.nextBlock;
             if (var13 >= 0) {
-                Rs var18 = (Rs) var4.get(Integer.valueOf(var13));
+                Rs var18 = var4.get(Integer.valueOf(var13));
                 if (var18 != null) {
                     var10.b(var18);
                 }
@@ -122,7 +122,7 @@ public class BlockPreviewer {
                 String var16 = (String) var9.parameters.get(var15);
                 if (var16 != null && var16.length() > 0) {
                     if (var16.charAt(0) == 64) {
-                        Rs var17 = (Rs) var4.get(Integer.valueOf(Integer.valueOf(var16.substring(1)).intValue()));
+                        Rs var17 = var4.get(Integer.valueOf(Integer.valueOf(var16.substring(1)).intValue()));
                         if (var17 != null && var10.V.size() > 0) {
                             var10.a((Ts) var10.V.get(var15), var17);
                         }

@@ -1,7 +1,7 @@
 package ma.swblockspreview.util;
 
 public class kq {
-    public static int a(String var0, String var1) {
+    public static int getBlockColor(String var0, String var1) {
         if (var1.equals("h")) {
             return -3636432;
         } else {

@@ -11,7 +11,7 @@ import java.util.Iterator;
 
 import ma.swblockspreview.bean.BlockBean;
 import ma.swblockspreview.editor.logic.BlockPane;
-import ma.swblockspreview.util.FB;
+import ma.swblockspreview.util.StringUtils;
 import ma.swblockspreview.util.kq;
 
 public class Rs extends Ts {
@@ -127,7 +127,7 @@ public class Rs extends Ts {
     }
 
     public final void a(String var1, int var2) {
-        ArrayList var3 = FB.c(var1);
+        ArrayList var3 = StringUtils.c(var1);
         ka = new ArrayList();
         la = new ArrayList();
 
@@ -180,7 +180,7 @@ public class Rs extends Ts {
             }
         }
 
-        return a(FB.d(var1));
+        return a(StringUtils.d(var1));
     }
 
     public void b(Rs var1) {
@@ -657,7 +657,7 @@ public class Rs extends Ts {
 
         setSpec(T);
 
-        int colorc = kq.a(U, super.b);
+        int colorc = kq.getBlockColor(U, super.b);
 
         if (colorc != -12289797) {
             super.e = colorc;

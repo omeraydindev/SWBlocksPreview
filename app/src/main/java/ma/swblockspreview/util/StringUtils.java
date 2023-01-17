@@ -8,16 +8,14 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Random;
 
-import ma.swblockspreview.BlockPreviewer;
-
-public class FB {
+public class StringUtils {
 
 
-    public static class FB$a {
+    public static class StringTokenizer {
         public String a;
         public int b;
 
-        public FB$a(String var1) {
+        public StringTokenizer(String var1) {
             a = var1;
             b = 0;
         }
@@ -215,7 +213,7 @@ public class FB {
 
     public static ArrayList c(String var0) {
         ArrayList var1 = new ArrayList();
-        FB$a var2 = new FB$a(var0);
+        StringTokenizer var2 = new StringTokenizer(var0);
 
         while (!var2.a()) {
             String var3 = var2.b();

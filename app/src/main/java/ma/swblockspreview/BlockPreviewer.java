@@ -17,7 +17,7 @@ import ma.swblockspreview.editor.Ss;
 import ma.swblockspreview.editor.Ts;
 import ma.swblockspreview.editor.ViewBlockCollectionEditor;
 import ma.swblockspreview.editor.logic.BlockPane;
-import ma.swblockspreview.util.wB;
+import ma.swblockspreview.util.LayoutUtils;
 
 public class BlockPreviewer {
     private Context context;
@@ -205,7 +205,7 @@ public class BlockPreviewer {
     }
 
     private static int a(Context var0) {
-        return (int) wB.a(var0, 48.0F);
+        return (int) LayoutUtils.getDip(var0, 48.0F);
     }
 
     private static int f(Context var0) {

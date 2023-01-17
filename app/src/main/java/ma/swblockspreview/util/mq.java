@@ -606,7 +606,7 @@ public class mq {
 
     public static ArrayList a(String var0) {
         ArrayList var1 = new ArrayList();
-        ArrayList var2 = FB.c(var0);
+        ArrayList var2 = StringUtils.c(var0);
         if (var2.size() <= 0) {
             return var1;
         } else {

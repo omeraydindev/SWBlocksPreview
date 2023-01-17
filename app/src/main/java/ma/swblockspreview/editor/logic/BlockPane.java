@@ -14,7 +14,7 @@ import ma.swblockspreview.editor.Ss;
 import ma.swblockspreview.editor.Ts;
 import ma.swblockspreview.util.Gx;
 import ma.swblockspreview.util.mq;
-import ma.swblockspreview.util.wB;
+import ma.swblockspreview.util.LayoutUtils;
 
 public class BlockPane extends RelativeLayout {
     public Context a;
@@ -24,7 +24,7 @@ public class BlockPane extends RelativeLayout {
     public ArrayList e = new ArrayList();
     public Object[] f = null;
     public int g = 10;
-    public float h = wB.a(getContext(), 1.0F);
+    public float h = LayoutUtils.getDip(getContext(), 1.0F);
 
     public BlockPane(Context var1) {
         super(var1);
@@ -359,7 +359,7 @@ public class BlockPane extends RelativeLayout {
         Rs var4 = d;
         var4.pa = this;
         addView(var4);
-        float var5 = wB.a(getContext(), 1.0F);
+        float var5 = LayoutUtils.getDip(getContext(), 1.0F);
         Rs var6 = d;
         float var7 = var5 * 8.0F;
         var6.setX(var7);

@@ -1,6 +1,6 @@
 package ma.swblockspreview.bean;
 
-public class SelectableBean extends nA {
+public class SelectableBean extends Bean {
     public static final int SAVED_POS_ETC = 2;
     public static final int SAVED_POS_NONE = -1;
     public static final int SAVED_POS_SKETCHWARE_DATA = 0;

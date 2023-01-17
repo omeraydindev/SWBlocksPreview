@@ -11,7 +11,7 @@ import android.widget.RelativeLayout;
 
 import ma.swblockspreview.util.Gx;
 import ma.swblockspreview.util.mq;
-import ma.swblockspreview.util.wB;
+import ma.swblockspreview.util.LayoutUtils;
 
 public class Ts extends RelativeLayout {
     public int A;
@@ -377,7 +377,7 @@ public class Ts extends RelativeLayout {
     }
 
     public final void a(Context var1) {
-        D = wB.a(var1, 1.0F);
+        D = LayoutUtils.getDip(var1, 1.0F);
         float var2 = (float) h;
         float var3 = D;
         h = (int) (var2 * var3);

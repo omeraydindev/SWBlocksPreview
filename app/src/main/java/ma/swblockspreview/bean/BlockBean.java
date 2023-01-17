@@ -131,41 +131,41 @@ public class BlockBean extends SelectableBean implements Parcelable {
         return paramClassInfo;
     }
 
-    public boolean isEqual(BlockBean var1) {
-        if (var1 == null) {
+    public boolean isEqual(BlockBean other) {
+        if (other == null) {
             return false;
         } else {
             String var2 = id;
-            if (var2 != null && !var2.equals(var1.id)) {
+            if (var2 != null && !var2.equals(other.id)) {
                 return false;
             } else {
                 String var3 = spec;
-                if (var3 != null && !var3.equals(var1.spec)) {
+                if (var3 != null && !var3.equals(other.spec)) {
                     return false;
-                } else if (!type.equals(var1.type)) {
+                } else if (!type.equals(other.type)) {
                     return false;
                 } else {
                     String var4 = typeName;
-                    if (var4 != null && !var4.equals(var1.typeName)) {
+                    if (var4 != null && !var4.equals(other.typeName)) {
                         return false;
-                    } else if (!opCode.equals(var1.opCode)) {
+                    } else if (!opCode.equals(other.opCode)) {
                         return false;
-                    } else if (color != var1.color) {
+                    } else if (color != other.color) {
                         return false;
-                    } else if (subStack1 != var1.subStack1) {
+                    } else if (subStack1 != other.subStack1) {
                         return false;
-                    } else if (subStack2 != var1.subStack2) {
+                    } else if (subStack2 != other.subStack2) {
                         return false;
-                    } else if (nextBlock != var1.nextBlock) {
+                    } else if (nextBlock != other.nextBlock) {
                         return false;
                     } else {
                         ArrayList var5 = parameters;
-                        if (var5 != null && var5.size() != var1.parameters.size()) {
+                        if (var5 != null && var5.size() != other.parameters.size()) {
                             return false;
                         } else {
                             for (int var6 = 0; var6 < parameters.size(); ++var6) {
                                 String var7 = (String) parameters.get(var6);
-                                String var8 = (String) var1.parameters.get(var6);
+                                String var8 = (String) other.parameters.get(var6);
                                 if (var7 != null && !var7.equals(var8)) {
                                     return false;
                                 }

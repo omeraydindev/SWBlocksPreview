@@ -17,33 +17,33 @@ public class ViewBlockCollectionEditor extends LogicEditorScrollView {
     public ViewBlockCollectionEditor(BlockPreviewer blockPreviewer, Context var1) {
         super(var1);
         this.blockPreviewer = blockPreviewer;
-        this.aa(var1);
+        aa(var1);
     }
 
     public ViewBlockCollectionEditor(BlockPreviewer blockPreviewer, Context var1, AttributeSet var2) {
         super(var1, var2);
         this.blockPreviewer = blockPreviewer;
-        this.aa(var1);
+        aa(var1);
     }
 
     private void aa(Context var1) {
-        this.i = var1;
-        this.j = new BlockPane(this.i);
-        this.j.setLayoutParams(new LayoutParams(-2, -2));
-        this.addView(this.j);
+        i = var1;
+        j = new BlockPane(i);
+        j.setLayoutParams(new LayoutParams(-2, -2));
+        addView(j);
     }
 
     public BlockPane getBlockPane() {
-        return this.j;
+        return j;
     }
 
     public void onLayout(boolean var1, int var2, int var3, int var4, int var5) {
         super.onLayout(var1, var2, var3, var4, var5);
-        if (this.k) {
-            this.j.getLayoutParams().width = var4 - var2;
-            this.j.getLayoutParams().height = var5 - var3;
-            this.j.b();
-            this.k = false;
+        if (k) {
+            j.getLayoutParams().width = var4 - var2;
+            j.getLayoutParams().height = var5 - var3;
+            j.b();
+            k = false;
         }
 
     }

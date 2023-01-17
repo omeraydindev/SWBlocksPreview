@@ -31,8 +31,8 @@ public class BlockPreviewer {
         viewBlockCollectionEditor.setScrollEnabled(true);
         blockPane = viewBlockCollectionEditor.getBlockPane();
 
-        this.a(blocks, 8, 8);
-        this.l();
+        a(blocks, 8, 8);
+        l();
 
         container.removeAllViews();
         container.addView(viewBlockCollectionEditor);
@@ -41,9 +41,9 @@ public class BlockPreviewer {
     // idk if this is necessary but here we go anyway.
     // Android is weird when it comes to memory leaks
     public void dispose() {
-        this.viewBlockCollectionEditor = null;
-        this.blockPane = null;
-        this.context = null;
+        viewBlockCollectionEditor = null;
+        blockPane = null;
+        context = null;
     }
 
     /**
@@ -51,7 +51,7 @@ public class BlockPreviewer {
      * IT WAS DECOMPILED & PORTED TO *JUST* WORK. NO REFACTORING HAS EVEN
      * BEEN ATTEMPTED BECAUSE I DID NOT WANT TO GO CRAZY, I JUST WANTED
      * IT TO SOMEWHAT WORK.
-     *
+     * <p>
      * READ/MODIFY AT YOUR OWN RISK !!!
      */
 
@@ -65,7 +65,7 @@ public class BlockPreviewer {
         boolean var7 = true;
 
         while (var5.hasNext()) {
-            Rs var21 = this.a((BlockBean) var5.next());
+            Rs var21 = a((BlockBean) var5.next());
             var4.put(Integer.valueOf(((Integer) var21.getTag()).intValue()), var21);
             BlockPane var23 = blockPane;
             var23.g = Math.max(var23.g, 1 + ((Integer) var21.getTag()).intValue());

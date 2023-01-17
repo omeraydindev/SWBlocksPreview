@@ -40,18 +40,18 @@ public class Rs extends Ts {
 
     public Rs(Context var1, int var2, String var3, String var4, String var5) {
         super(var1, var4, false);
-        this.setTag(Integer.valueOf(var2));
-        this.T = var3;
-        this.U = var5;
-        this.l();
+        setTag(Integer.valueOf(var2));
+        T = var3;
+        U = var5;
+        l();
     }
 
     public Rs(Context var1, int var2, String var3, String var4, String var5, String var6) {
         super(var1, var4, var5, false);
-        this.setTag(Integer.valueOf(var2));
-        this.T = var3;
-        this.U = var6;
-        this.l();
+        setTag(Integer.valueOf(var2));
+        T = var3;
+        U = var6;
+        l();
     }
 
     public final int a(TextView var1) {
@@ -62,7 +62,7 @@ public class Rs extends Ts {
 
     public final TextView a(String var1) {
         TextView var2 = new TextView(super.a);
-        if (this.U.equals("getVar") || this.U.equals("getArg")) {
+        if (U.equals("getVar") || U.equals("getArg")) {
             String var3 = super.c;
             if (var3 != null && var3.length() > 0) {
                 StringBuilder var5 = new StringBuilder();
@@ -78,7 +78,7 @@ public class Rs extends Ts {
         var2.setPadding(0, 0, 0, 0);
         var2.setGravity(16);
         var2.setTextColor(-1);
-        var2.setTypeface((Typeface) null, Typeface.BOLD);
+        var2.setTypeface(null, Typeface.BOLD);
         LayoutParams var4 = new LayoutParams(-2, super.G);
         var4.setMargins(0, 0, 0, 0);
         var2.setLayoutParams(var4);
@@ -86,17 +86,17 @@ public class Rs extends Ts {
     }
 
     public final void a(Rs var1) {
-        if (this.b() && -1 == this.ia) {
-            this.e(var1);
+        if (b() && -1 == ia) {
+            e(var1);
         } else {
-            Rs var2 = this.h();
+            Rs var2 = h();
             var2.ha = ((Integer) var1.getTag()).intValue();
             var1.E = var2;
         }
     }
 
     public void a(Ts var1, Rs var2) {
-        int var3 = this.ka.indexOf(var1);
+        int var3 = ka.indexOf(var1);
         if (var3 >= 0) {
             boolean var4 = var1 instanceof Rs;
             if (var4) {
@@ -109,17 +109,17 @@ public class Rs extends Ts {
             }
 
             if (!var4) {
-                this.removeView(var1);
+                removeView(var1);
             }
 
-            this.ka.set(var3, var2);
+            ka.set(var3, var2);
             var2.E = this;
-            this.i();
-            this.o();
+            i();
+            o();
             if (var1 != var2 && var4) {
                 var1.E = null;
-                var1.setX(10.0F + this.getX() + (float) this.getWidthSum());
-                var1.setY(5.0F + this.getY());
+                var1.setX(10.0F + getX() + (float) getWidthSum());
+                var1.setY(5.0F + getY());
                 ((Rs) var1).k();
             }
 
@@ -128,16 +128,16 @@ public class Rs extends Ts {
 
     public final void a(String var1, int var2) {
         ArrayList var3 = FB.c(var1);
-        this.ka = new ArrayList();
-        this.la = new ArrayList();
+        ka = new ArrayList();
+        la = new ArrayList();
 
         for (int var4 = 0; var4 < var3.size(); ++var4) {
-            View var5 = this.b((String) var3.get(var4), var2);
+            View var5 = b((String) var3.get(var4), var2);
             if (var5 instanceof Ts) {
                 ((Ts) var5).E = this;
             }
 
-            this.ka.add(var5);
+            ka.add(var5);
             String var7;
             if (var5 instanceof Ss) {
                 var7 = (String) var3.get(var4);
@@ -149,7 +149,7 @@ public class Rs extends Ts {
                 var7 = "label";
             }
 
-            this.la.add(var7);
+            la.add(var7);
         }
 
     }
@@ -180,17 +180,17 @@ public class Rs extends Ts {
             }
         }
 
-        return this.a(FB.d(var1));
+        return a(FB.d(var1));
     }
 
     public void b(Rs var1) {
-        View var2 = this.pa.findViewWithTag(Integer.valueOf(this.ha));
+        View var2 = pa.findViewWithTag(Integer.valueOf(ha));
         if (var2 != null) {
             ((Rs) var2).E = null;
         }
 
         var1.E = this;
-        this.ha = ((Integer) var1.getTag()).intValue();
+        ha = ((Integer) var1.getTag()).intValue();
         if (var2 != null) {
             var1.a((Rs) var2);
         }
@@ -198,26 +198,26 @@ public class Rs extends Ts {
     }
 
     public void c(Rs var1) {
-        var1.setX(this.getX());
-        var1.setY(this.getY() - (float) var1.getHeightSum() + (float) super.h);
+        var1.setX(getX());
+        var1.setY(getY() - (float) var1.getHeightSum() + (float) super.h);
         var1.h().b(this);
     }
 
     public void d(Rs var1) {
-        var1.setX(this.getX() - (float) super.j);
-        var1.setY(this.getY() - (float) this.f());
+        var1.setX(getX() - (float) super.j);
+        var1.setY(getY() - (float) f());
         super.E = var1;
-        var1.ia = ((Integer) this.getTag()).intValue();
+        var1.ia = ((Integer) getTag()).intValue();
     }
 
     public void e(Rs var1) {
-        View var2 = this.pa.findViewWithTag(Integer.valueOf(this.ia));
+        View var2 = pa.findViewWithTag(Integer.valueOf(ia));
         if (var2 != null) {
             ((Rs) var2).E = null;
         }
 
         var1.E = this;
-        this.ia = ((Integer) var1.getTag()).intValue();
+        ia = ((Integer) var1.getTag()).intValue();
         if (var2 != null) {
             var1.a((Rs) var2);
         }
@@ -225,13 +225,13 @@ public class Rs extends Ts {
     }
 
     public void f(Rs var1) {
-        View var2 = this.pa.findViewWithTag(Integer.valueOf(this.ja));
+        View var2 = pa.findViewWithTag(Integer.valueOf(ja));
         if (var2 != null) {
             ((Rs) var2).E = null;
         }
 
         var1.E = this;
-        this.ja = ((Integer) var1.getTag()).intValue();
+        ja = ((Integer) var1.getTag()).intValue();
         if (var2 != null) {
             var1.a((Rs) var2);
         }
@@ -239,38 +239,38 @@ public class Rs extends Ts {
     }
 
     public void g(Rs var1) {
-        if (this.ha == ((Integer) var1.getTag()).intValue()) {
-            this.ha = -1;
+        if (ha == ((Integer) var1.getTag()).intValue()) {
+            ha = -1;
         }
 
-        if (this.ia == ((Integer) var1.getTag()).intValue()) {
-            this.ia = -1;
+        if (ia == ((Integer) var1.getTag()).intValue()) {
+            ia = -1;
         }
 
-        if (this.ja == ((Integer) var1.getTag()).intValue()) {
-            this.ja = -1;
+        if (ja == ((Integer) var1.getTag()).intValue()) {
+            ja = -1;
         }
 
         if (var1.fa) {
-            int var2 = this.ka.indexOf(var1);
+            int var2 = ka.indexOf(var1);
             if (var2 < 0) {
                 return;
             }
 
             var1.qa = "";
             var1.ra = "";
-            View var3 = this.b((String) this.la.get(var2), super.e);
+            View var3 = b((String) la.get(var2), super.e);
             if (var3 instanceof Ts) {
                 ((Ts) var3).E = this;
             }
 
-            this.ka.set(var2, var3);
-            this.addView(var3);
-            this.i();
-            this.o();
+            ka.set(var2, var3);
+            addView(var3);
+            i();
+            o();
         }
 
-        this.p().k();
+        p().k();
     }
 
     public ArrayList getAllChildren() {
@@ -291,14 +291,14 @@ public class Rs extends Ts {
             if (var2.b()) {
                 int var8 = var2.ia;
                 if (var8 != -1) {
-                    var1.addAll(((Rs) this.pa.findViewWithTag(Integer.valueOf(var8))).getAllChildren());
+                    var1.addAll(((Rs) pa.findViewWithTag(Integer.valueOf(var8))).getAllChildren());
                 }
             }
 
             if (var2.c()) {
                 int var6 = var2.ja;
                 if (var6 != -1) {
-                    var1.addAll(((Rs) this.pa.findViewWithTag(Integer.valueOf(var6))).getAllChildren());
+                    var1.addAll(((Rs) pa.findViewWithTag(Integer.valueOf(var6))).getAllChildren());
                 }
             }
 
@@ -307,14 +307,14 @@ public class Rs extends Ts {
                 return var1;
             }
 
-            var2 = (Rs) this.pa.findViewWithTag(Integer.valueOf(var5));
+            var2 = pa.findViewWithTag(Integer.valueOf(var5));
         }
     }
 
     public BlockBean getBean() {
-        BlockBean var1 = new BlockBean(this.getTag().toString(), this.T, super.b, super.c, this.U);
+        BlockBean var1 = new BlockBean(getTag().toString(), T, super.b, super.c, U);
         var1.color = super.e;
-        Iterator var2 = this.V.iterator();
+        Iterator var2 = V.iterator();
 
         while (var2.hasNext()) {
             View var3 = (View) var2.next();
@@ -329,14 +329,14 @@ public class Rs extends Ts {
             }
         }
 
-        var1.subStack1 = this.ia;
-        var1.subStack2 = this.ja;
-        var1.nextBlock = this.ha;
+        var1.subStack1 = ia;
+        var1.subStack2 = ja;
+        var1.nextBlock = ha;
         return var1;
     }
 
     public int getBlockType() {
-        return this.oa;
+        return oa;
     }
 
     public int getDepth() {
@@ -368,7 +368,7 @@ public class Rs extends Ts {
                 return var1;
             }
 
-            var2 = (Rs) this.pa.findViewWithTag(Integer.valueOf(var3));
+            var2 = pa.findViewWithTag(Integer.valueOf(var3));
         }
     }
 
@@ -381,14 +381,14 @@ public class Rs extends Ts {
             if (var2.b()) {
                 int var5 = var2.ia;
                 if (var5 != -1) {
-                    var1 = Math.max(var1, super.j + ((Rs) this.pa.findViewWithTag(Integer.valueOf(var5))).getWidthSum());
+                    var1 = Math.max(var1, super.j + ((Rs) pa.findViewWithTag(Integer.valueOf(var5))).getWidthSum());
                 }
             }
 
             if (var2.c()) {
                 int var4 = var2.ja;
                 if (var4 != -1) {
-                    var1 = Math.max(var1, super.j + ((Rs) this.pa.findViewWithTag(Integer.valueOf(var4))).getWidthSum());
+                    var1 = Math.max(var1, super.j + ((Rs) pa.findViewWithTag(Integer.valueOf(var4))).getWidthSum());
                 }
             }
 
@@ -397,7 +397,7 @@ public class Rs extends Ts {
                 return var1;
             }
 
-            var2 = (Rs) this.pa.findViewWithTag(Integer.valueOf(var3));
+            var2 = pa.findViewWithTag(Integer.valueOf(var3));
         }
     }
 
@@ -410,49 +410,49 @@ public class Rs extends Ts {
                 return var1;
             }
 
-            var1 = (Rs) this.pa.findViewWithTag(Integer.valueOf(var2));
+            var1 = pa.findViewWithTag(Integer.valueOf(var2));
         }
     }
 
     public final void i() {
-        this.V = new ArrayList();
+        V = new ArrayList();
 
-        for (int var1 = 0; var1 < this.ka.size(); ++var1) {
-            View var2 = (View) this.ka.get(var1);
+        for (int var1 = 0; var1 < ka.size(); ++var1) {
+            View var2 = (View) ka.get(var1);
             if (var2 instanceof Rs || var2 instanceof Ss) {
-                this.V.add(var2);
+                V.add(var2);
             }
         }
 
     }
 
     public final void j() {
-        TextView var1 = this.ma;
+        TextView var1 = ma;
         if (var1 != null) {
             var1.bringToFront();
-            this.ma.setX((float) super.w);
-            this.ma.setY((float) (this.g() - super.n));
+            ma.setX((float) super.w);
+            ma.setY((float) (g() - super.n));
         }
 
     }
 
     public void k() {
-        this.bringToFront();
+        bringToFront();
         int var1 = super.w;
 
-        for (int var2 = 0; var2 < this.ka.size(); ++var2) {
-            View var12 = (View) this.ka.get(var2);
+        for (int var2 = 0; var2 < ka.size(); ++var2) {
+            View var12 = (View) ka.get(var2);
             var12.bringToFront();
             boolean var13 = var12 instanceof Rs;
             if (var13) {
-                var12.setX(this.getX() + (float) var1);
+                var12.setX(getX() + (float) var1);
             } else {
                 var12.setX((float) var1);
             }
 
             int var14;
-            if (((String) this.la.get(var2)).equals("label")) {
-                var14 = this.a((TextView) var12);
+            if (la.get(var2).equals("label")) {
+                var14 = a((TextView) var12);
             } else {
                 var14 = 0;
             }
@@ -465,54 +465,54 @@ public class Rs extends Ts {
                 var14 = ((Rs) var12).getWidthSum();
             }
 
-            var1 += var14 + this.da;
+            var1 += var14 + da;
             if (var13) {
-                float var15 = this.getY() + (float) super.u;
-                int var16 = this.na;
+                float var15 = getY() + (float) super.u;
+                int var16 = na;
                 Rs var17 = (Rs) var12;
                 var12.setY(var15 + (float) ((var16 - var17.na - 1) * super.y));
                 var17.k();
             } else {
-                var12.setY((float) (super.u + this.na * super.y));
+                var12.setY((float) (super.u + na * super.y));
             }
         }
 
         if (super.b.equals("b") || super.b.equals("d") || super.b.equals("s") || super.b.equals("a")) {
-            var1 = Math.max(var1, this.W);
+            var1 = Math.max(var1, W);
         }
 
         if (super.b.equals(" ") || super.b.equals("") || super.b.equals("f")) {
-            var1 = Math.max(var1, this.aa);
+            var1 = Math.max(var1, aa);
         }
 
         if (super.b.equals("c") || super.b.equals("e")) {
-            var1 = Math.max(var1, this.ca);
+            var1 = Math.max(var1, ca);
         }
 
         if (super.b.equals("h")) {
-            var1 = Math.max(var1, this.ba);
+            var1 = Math.max(var1, ba);
         }
 
-        this.a((float) (var1 + super.x), (float) (super.u + super.G + 2 * this.na * super.y + super.v), true);
-        if (this.b()) {
+        a((float) (var1 + super.x), (float) (super.u + super.G + 2 * na * super.y + super.v), true);
+        if (b()) {
             int var5 = super.i;
-            int var6 = this.ia;
+            int var6 = ia;
             if (var6 > -1) {
-                Rs var11 = (Rs) this.pa.findViewWithTag(Integer.valueOf(var6));
-                var11.setX(this.getX() + (float) super.j);
-                var11.setY(this.getY() + (float) this.f());
+                Rs var11 = pa.findViewWithTag(Integer.valueOf(var6));
+                var11.setX(getX() + (float) super.j);
+                var11.setY(getY() + (float) f());
                 var11.bringToFront();
                 var11.k();
                 var5 = var11.getHeightSum();
             }
 
-            this.setSubstack1Height(var5);
+            setSubstack1Height(var5);
             int var7 = super.i;
-            int var8 = this.ja;
+            int var8 = ja;
             if (var8 > -1) {
-                Rs var9 = (Rs) this.pa.findViewWithTag(Integer.valueOf(var8));
-                var9.setX(this.getX() + (float) super.j);
-                var9.setY(this.getY() + (float) this.g());
+                Rs var9 = pa.findViewWithTag(Integer.valueOf(var8));
+                var9.setX(getX() + (float) super.j);
+                var9.setY(getY() + (float) g());
                 var9.bringToFront();
                 var9.k();
                 int var10 = var9.getHeightSum();
@@ -523,15 +523,15 @@ public class Rs extends Ts {
                 }
             }
 
-            this.setSubstack2Height(var7);
-            this.j();
+            setSubstack2Height(var7);
+            j();
         }
 
-        int var3 = this.ha;
+        int var3 = ha;
         if (var3 > -1) {
-            Rs var4 = (Rs) this.pa.findViewWithTag(Integer.valueOf(var3));
-            var4.setX(this.getX());
-            var4.setY(this.getY() + (float) this.d());
+            Rs var4 = pa.findViewWithTag(Integer.valueOf(var3));
+            var4.setX(getX());
+            var4.setY(getY() + (float) d());
             var4.bringToFront();
             var4.k();
         }
@@ -542,14 +542,14 @@ public class Rs extends Ts {
         byte var5;
         label84:
         {
-            this.setDrawingCacheEnabled(false);
-            float var1 = (float) this.W;
+            setDrawingCacheEnabled(false);
+            float var1 = (float) W;
             float var2 = super.D;
-            this.W = (int) (var1 * var2);
-            this.aa = (int) (var2 * (float) this.aa);
-            this.ba = (int) (var2 * (float) this.ba);
-            this.ca = (int) (var2 * (float) this.ca);
-            this.da = (int) (var2 * (float) this.da);
+            W = (int) (var1 * var2);
+            aa = (int) (var2 * (float) aa);
+            ba = (int) (var2 * (float) ba);
+            ca = (int) (var2 * (float) ca);
+            da = (int) (var2 * (float) da);
             String var3 = super.b;
             int var4 = var3.hashCode();
             if (var4 != 32) {
@@ -636,13 +636,13 @@ public class Rs extends Ts {
             case 5:
             case 6:
             case 7:
-                this.fa = true;
+                fa = true;
                 break;
             case 10:
-                this.ga = true;
+                ga = true;
                 break;
             case 11:
-                this.ea = true;
+                ea = true;
         }
 
             /*
@@ -655,9 +655,9 @@ public class Rs extends Ts {
      this.T = MakeBlock.getSpecBlock(this.U);
      }*/
 
-        this.setSpec(this.T);
+        setSpec(T);
 
-        int colorc = kq.a(this.U, super.b);
+        int colorc = kq.a(U, super.b);
 
         if (colorc != -12289797) {
             super.e = colorc;
@@ -679,11 +679,11 @@ public class Rs extends Ts {
     public void n() {
         int var1 = super.w;
 
-        for (int var2 = 0; var2 < this.ka.size(); ++var2) {
-            View var4 = (View) this.ka.get(var2);
+        for (int var2 = 0; var2 < ka.size(); ++var2) {
+            View var4 = (View) ka.get(var2);
             int var5;
-            if (((String) this.la.get(var2)).equals("label")) {
-                var5 = this.a((TextView) var4);
+            if (la.get(var2).equals("label")) {
+                var5 = a((TextView) var4);
             } else {
                 var5 = 0;
             }
@@ -696,31 +696,31 @@ public class Rs extends Ts {
                 var5 = ((Rs) var4).getWidthSum();
             }
 
-            var1 += var5 + this.da;
+            var1 += var5 + da;
         }
 
         if (super.b.equals("b") || super.b.equals("d") || super.b.equals("s") || super.b.equals("a")) {
-            var1 = Math.max(var1, this.W);
+            var1 = Math.max(var1, W);
         }
 
         if (super.b.equals(" ") || super.b.equals("") || super.b.equals("o")) {
-            var1 = Math.max(var1, this.aa);
+            var1 = Math.max(var1, aa);
         }
 
         if (super.b.equals("c") || super.b.equals("e")) {
-            var1 = Math.max(var1, this.ca);
+            var1 = Math.max(var1, ca);
         }
 
         if (super.b.equals("h")) {
-            var1 = Math.max(var1, this.ba);
+            var1 = Math.max(var1, ba);
         }
 
-        TextView var3 = this.ma;
+        TextView var3 = ma;
         if (var3 != null) {
             var1 = Math.max(var1, 2 + super.w + var3.getWidth());
         }
 
-        this.a((float) (var1 + super.x), (float) (super.u + super.G + 2 * this.na * super.y + super.v), false);
+        a((float) (var1 + super.x), (float) (super.u + super.G + 2 * na * super.y + super.v), false);
     }
 
     public void o() {
@@ -758,30 +758,30 @@ public class Rs extends Ts {
     }
 
     public void setBlockType(int var1) {
-        this.oa = var1;
+        oa = var1;
     }
 
     public void setSpec(String var1) {
-        this.T = var1;
-        this.removeAllViews();
-        this.a(this.T, super.e);
-        Iterator var2 = this.ka.iterator();
+        T = var1;
+        removeAllViews();
+        a(T, super.e);
+        Iterator var2 = ka.iterator();
 
         while (var2.hasNext()) {
-            this.addView((View) var2.next());
+            addView((View) var2.next());
         }
 
-        this.i();
-        if (super.b.equals("e") && this.U.equals("ifElse")) {
-            this.ma = this.a("else");
-            this.addView(this.ma);
+        i();
+        if (super.b.equals("e") && U.equals("ifElse")) {
+            ma = a("else");
+            addView(ma);
         }
 
-        if (super.b.equals("e") && this.U.equals("tryCatch")) {
-            this.ma = this.a("Catch");
-            this.addView(this.ma);
+        if (super.b.equals("e") && U.equals("tryCatch")) {
+            ma = a("Catch");
+            addView(ma);
         }
 
-        this.k();
+        k();
     }
 }

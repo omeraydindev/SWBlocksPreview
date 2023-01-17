@@ -1,6 +1,7 @@
 package ma.swblockspreview.util;
 
 import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 
 import java.text.DecimalFormat;
@@ -17,39 +18,39 @@ public class FB {
         public int b;
 
         public FB$a(String var1) {
-            this.a = var1;
-            this.b = 0;
+            a = var1;
+            b = 0;
         }
 
         public boolean a() {
-            return this.b >= this.a.length();
+            return b >= a.length();
         }
 
         public String b() {
-            this.c();
-            boolean var1 = this.a();
+            c();
+            boolean var1 = a();
             String var2 = "";
             if (var1) {
                 return var2;
             } else {
                 boolean var3 = false;
-                int var4 = this.b;
+                int var4 = b;
 
-                while (this.b < this.a.length()) {
-                    if (this.a.charAt(this.b) == 32) {
+                while (b < a.length()) {
+                    if (a.charAt(b) == 32) {
                         return var2;
                     }
 
-                    char var5 = this.a.charAt(this.b);
+                    char var5 = a.charAt(b);
                     if (var5 == 92) {
                         StringBuilder var6 = new StringBuilder();
                         var6.append(var2);
-                        var6.append(var5 + this.a.charAt(1 + this.b));
+                        var6.append(var5 + a.charAt(1 + b));
                         var2 = var6.toString();
-                        this.b += 2;
+                        b += 2;
                     } else {
                         if (var5 == 37) {
-                            if (this.b > var4) {
+                            if (b > var4) {
                                 return var2;
                             }
 
@@ -70,7 +71,7 @@ public class FB {
                         var9.append(var2);
                         var9.append(var5);
                         var2 = var9.toString();
-                        ++this.b;
+                        ++b;
                     }
                 }
 
@@ -79,8 +80,8 @@ public class FB {
         }
 
         public void c() {
-            while (this.b < this.a.length() && this.a.charAt(this.b) == 32) {
-                ++this.b;
+            while (b < a.length() && a.charAt(b) == 32) {
+                ++b;
             }
 
         }
@@ -95,9 +96,9 @@ public class FB {
             if (var0 < var1 || var0 > 70) {
                 var1 = 97;
                 if (var0 < var1 || var0 > 102) {
-                    StringBuilder var2 = new StringBuilder("invalid hex digit \'");
+                    StringBuilder var2 = new StringBuilder("invalid hex digit '");
                     var2.append(var0);
-                    var2.append("\'");
+                    var2.append("'");
                     throw new IllegalArgumentException(var2.toString());
                 }
             }
@@ -111,7 +112,6 @@ public class FB {
 
         int var1;
         for (var1 = var0.nextInt(100000); var1 < 10000 || var1 > 99999; var1 = var0.nextInt(100000)) {
-            ;
         }
 
         return String.valueOf(var1);
@@ -124,16 +124,16 @@ public class FB {
             float var1 = (float) var0;
             if (var1 >= 1024.0F && var1 < 1048576.0F) {
                 float var7 = var1 / 1024.0F;
-                return (new DecimalFormat("#.#KB")).format((double) var7);
+                return (new DecimalFormat("#.#KB")).format(var7);
             } else if (var1 >= 1048576.0F && var1 < 1.07374182E9F) {
                 float var6 = var1 / 1048576.0F;
-                return (new DecimalFormat("#.#MB")).format((double) var6);
+                return (new DecimalFormat("#.#MB")).format(var6);
             } else if (var1 >= 1.07374182E9F && var1 < 1.09951163E12F) {
                 float var5 = var1 / 1.07374182E9F;
-                return (new DecimalFormat("#.#GB")).format((double) var5);
+                return (new DecimalFormat("#.#GB")).format(var5);
             } else {
                 StringBuilder var2 = new StringBuilder();
-                var2.append(String.valueOf(var0));
+                var2.append(var0);
                 var2.append("B");
                 return var2.toString();
             }
@@ -148,14 +148,14 @@ public class FB {
                 var1.append("0");
             }
 
-            var1.append(Long.toString((long) (255 & var0[var2]), 16));
+            var1.append(Long.toString(255 & var0[var2], 16));
         }
 
         return var1.toString();
     }
 
     public static void a(Context var0, String var1, String var2) {
-        ((android.content.ClipboardManager) var0.getSystemService(Context.CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText(var1, var2));
+        ((ClipboardManager) var0.getSystemService(Context.CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText(var1, var2));
     }
 
     public static byte[] a(String var0) {
@@ -188,13 +188,13 @@ public class FB {
         float var1 = (float) var0;
         if (var1 >= 1000.0F && var1 < 1000000.0F) {
             float var4 = var1 / 1000.0F;
-            return (new DecimalFormat("#.#K")).format((double) var4);
+            return (new DecimalFormat("#.#K")).format(var4);
         } else if (var1 >= 1000000.0F && var1 < 1.0E9F) {
             float var3 = var1 / 1000000.0F;
-            return (new DecimalFormat("#.#M")).format((double) var3);
+            return (new DecimalFormat("#.#M")).format(var3);
         } else if (var1 >= 1.0E9F && var1 < 1.0E12F) {
             float var2 = var1 / 1.0E9F;
-            return (new DecimalFormat("#.#G")).format((double) var2);
+            return (new DecimalFormat("#.#G")).format(var2);
         } else {
             return String.valueOf(var0);
         }
@@ -210,7 +210,7 @@ public class FB {
     }
 
     public static String c(int var0) {
-        return (new DecimalFormat("#,###")).format((long) var0);
+        return (new DecimalFormat("#,###")).format(var0);
     }
 
     public static ArrayList c(String var0) {

@@ -19,35 +19,35 @@ public class LogicEditorScrollView extends FrameLayout {
 
     public LogicEditorScrollView(Context var1) {
         super(var1);
-        this.a(var1);
+        a(var1);
     }
 
     public LogicEditorScrollView(Context var1, AttributeSet var2) {
         super(var1, var2);
-        this.a(var1);
+        a(var1);
     }
 
     public final void a(Context var1) {
-        this.c = ViewConfiguration.get(var1).getScaledTouchSlop();
+        c = ViewConfiguration.get(var1).getScaledTouchSlop();
     }
 
     public boolean a() {
-        if (this.getChildCount() <= 0) {
+        if (getChildCount() <= 0) {
             return false;
         } else {
-            boolean var1 = this.f;
+            boolean var1 = f;
             boolean var2 = false;
             if (var1) {
-                if (!this.e) {
+                if (!e) {
                     return false;
                 }
 
-                View var3 = this.getChildAt(0);
+                View var3 = getChildAt(0);
                 int var4 = var3.getWidth();
                 int var5 = var3.getHeight();
-                if (this.getWidth() >= var4 + this.getPaddingLeft() + this.getPaddingRight()) {
-                    int var6 = this.getHeight();
-                    int var7 = var5 + this.getPaddingTop() + this.getPaddingBottom();
+                if (getWidth() >= var4 + getPaddingLeft() + getPaddingRight()) {
+                    int var6 = getHeight();
+                    int var7 = var5 + getPaddingTop() + getPaddingBottom();
                     var2 = false;
                     if (var6 >= var7) {
                         return var2;
@@ -62,7 +62,7 @@ public class LogicEditorScrollView extends FrameLayout {
     }
 
     public void addView(View var1) {
-        if (this.getChildCount() <= 1) {
+        if (getChildCount() <= 1) {
             super.addView(var1);
         } else {
             throw new IllegalStateException("BothDirectionScrollView should have child View only one");
@@ -70,19 +70,19 @@ public class LogicEditorScrollView extends FrameLayout {
     }
 
     public boolean getScrollEnabled() {
-        return this.e;
+        return e;
     }
 
     public boolean getUseScroll() {
-        return this.f;
+        return f;
     }
 
     public boolean onInterceptTouchEvent(MotionEvent var1) {
-        if (!this.a()) {
+        if (!a()) {
             return false;
         } else {
             int var2 = var1.getAction();
-            if (var2 == 2 && this.d) {
+            if (var2 == 2 && d) {
                 return true;
             } else {
                 float var3 = var1.getX();
@@ -90,39 +90,39 @@ public class LogicEditorScrollView extends FrameLayout {
                 if (var2 != 0) {
                     if (var2 != 1) {
                         if (var2 == 2) {
-                            int var5 = (int) Math.abs(this.a - var3);
-                            int var6 = (int) Math.abs(this.b - var4);
-                            int var7 = this.c;
+                            int var5 = (int) Math.abs(a - var3);
+                            int var6 = (int) Math.abs(b - var4);
+                            int var7 = c;
                             if (var5 > var7 || var6 > var7) {
-                                this.d = true;
+                                d = true;
                             }
                         }
                     } else {
-                        this.d = false;
+                        d = false;
                     }
                 } else {
-                    this.a = var3;
-                    this.b = var4;
-                    this.d = false;
+                    a = var3;
+                    b = var4;
+                    d = false;
                 }
 
-                return this.d;
+                return d;
             }
         }
     }
 
     public boolean onTouchEvent(MotionEvent var1) {
-        if (!this.a()) {
+        if (!a()) {
             return false;
         } else {
-            View var2 = this.getChildAt(0);
+            View var2 = getChildAt(0);
             int var3 = var1.getAction();
             float var4 = var1.getX();
             float var5 = var1.getY();
             if (var3 != 0) {
                 if (var3 == 1) {
-                    this.g = -1.0F;
-                    this.h = -1.0F;
+                    g = -1.0F;
+                    h = -1.0F;
                     return true;
                 }
 
@@ -130,27 +130,27 @@ public class LogicEditorScrollView extends FrameLayout {
                     return true;
                 }
 
-                if (this.g < 0.0F) {
-                    this.g = var4;
+                if (g < 0.0F) {
+                    g = var4;
                 }
 
-                if (this.h < 0.0F) {
-                    this.h = var5;
+                if (h < 0.0F) {
+                    h = var5;
                 }
 
-                int var6 = (int) (this.g - var4);
-                int var7 = (int) (this.h - var5);
-                this.g = var4;
-                this.h = var5;
+                int var6 = (int) (g - var4);
+                int var7 = (int) (h - var5);
+                g = var4;
+                h = var5;
                 int var9;
                 if (var6 <= 0) {
-                    if (this.getScrollX() <= 0) {
+                    if (getScrollX() <= 0) {
                         var6 = 0;
                     }
 
-                    var9 = Math.max(0 - this.getScrollX(), var6);
+                    var9 = Math.max(0 - getScrollX(), var6);
                 } else {
-                    int var8 = var2.getRight() - this.getScrollX() - this.getWidth() - this.getPaddingRight();
+                    int var8 = var2.getRight() - getScrollX() - getWidth() - getPaddingRight();
                     if (var8 > 0) {
                         var9 = Math.min(var8, var6);
                     } else {
@@ -160,13 +160,13 @@ public class LogicEditorScrollView extends FrameLayout {
 
                 int var11;
                 if (var7 <= 0) {
-                    if (this.getScrollY() <= 0) {
+                    if (getScrollY() <= 0) {
                         var7 = 0;
                     }
 
-                    var11 = Math.max(0 - this.getScrollY(), var7);
+                    var11 = Math.max(0 - getScrollY(), var7);
                 } else {
-                    int var10 = var2.getBottom() - this.getScrollY() - this.getHeight() - this.getPaddingBottom();
+                    int var10 = var2.getBottom() - getScrollY() - getHeight() - getPaddingBottom();
                     var11 = 0;
                     if (var10 > 0) {
                         var11 = Math.min(var10, var7);
@@ -174,12 +174,12 @@ public class LogicEditorScrollView extends FrameLayout {
                 }
 
                 if (var9 != 0 || var11 != 0) {
-                    this.scrollBy(var9, var11);
+                    scrollBy(var9, var11);
                     return true;
                 }
             } else {
-                this.g = var4;
-                this.h = var5;
+                g = var4;
+                h = var5;
             }
 
             return true;
@@ -187,10 +187,10 @@ public class LogicEditorScrollView extends FrameLayout {
     }
 
     public void setScrollEnabled(boolean var1) {
-        this.e = var1;
+        e = var1;
     }
 
     public void setUseScroll(boolean var1) {
-        this.f = var1;
+        f = var1;
     }
 }

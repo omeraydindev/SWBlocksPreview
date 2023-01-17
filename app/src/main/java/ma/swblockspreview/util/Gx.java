@@ -7,24 +7,24 @@ public class Gx {
     public String[] b;
 
     public Gx(String var1) {
-        this.a = var1;
-        this.b = null;
-        this.e();
+        a = var1;
+        b = null;
+        e();
     }
 
     public String a() {
-        return this.a;
+        return a;
     }
 
     public boolean a(Gx var1) {
-        return this.a(var1.a);
+        return a(var1.a);
     }
 
     public boolean a(String var1) {
-        if (var1.equals(this.a)) {
+        if (var1.equals(a)) {
             return true;
         } else {
-            String[] var2 = this.b;
+            String[] var2 = b;
             int var3 = var2.length;
 
             for (int var4 = 0; var4 < var3; ++var4) {
@@ -38,19 +38,19 @@ public class Gx {
     }
 
     public boolean b() {
-        return this.a("List");
+        return a("List");
     }
 
     public boolean b(String var1) {
-        return this.a.equals(var1);
+        return a.equals(var1);
     }
 
     public boolean c() {
-        return this.a("Var");
+        return a("Var");
     }
 
     public boolean d() {
-        return this.a("View");
+        return a("View");
     }
 
     public final void e() {
@@ -59,7 +59,7 @@ public class Gx {
         byte var5;
         label209:
         {
-            String var1 = this.a;
+            String var1 = a;
             var2 = BV.a(var1);
             int var3 = var1.hashCode();
             var4 = "View";
@@ -503,6 +503,6 @@ public class Gx {
                 var4 = var2;
         }
 
-        this.b = var4.split("\\.");
+        b = var4.split("\\.");
     }
 }

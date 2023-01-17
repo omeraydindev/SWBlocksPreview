@@ -62,54 +62,54 @@ public class Ts extends RelativeLayout {
 
     public Ts(Context var1, String var2, String var3, boolean var4) {
         super(var1);
-        this.h = 3;
-        this.i = 12;
-        this.j = 15;
-        this.k = 3;
-        this.l = 2;
-        this.m = 15;
-        this.n = 15;
-        this.o = 15;
-        int var5 = this.o;
-        int var6 = this.h;
-        this.p = var5 + var6;
-        this.q = 10 + this.p;
-        this.r = var6 + this.q;
-        this.s = 6;
-        this.t = 60;
-        this.u = 2;
-        this.v = 2;
-        this.w = 3;
-        this.x = 0;
-        this.y = 2;
-        int var7 = this.i;
-        this.B = var7;
-        this.C = var7;
-        this.E = null;
-        this.F = 100;
-        this.G = 14;
-        this.H = 15;
-        this.I = 6;
-        this.J = 4;
-        this.K = false;
-        this.L = false;
-        this.P = 1;
-        this.Q = 1;
-        this.R = 805306368;
-        this.S = null;
-        this.a = var1;
-        this.b = var2;
+        h = 3;
+        i = 12;
+        j = 15;
+        k = 3;
+        l = 2;
+        m = 15;
+        n = 15;
+        o = 15;
+        int var5 = o;
+        int var6 = h;
+        p = var5 + var6;
+        q = 10 + p;
+        r = var6 + q;
+        s = 6;
+        t = 60;
+        u = 2;
+        v = 2;
+        w = 3;
+        x = 0;
+        y = 2;
+        int var7 = i;
+        B = var7;
+        C = var7;
+        E = null;
+        F = 100;
+        G = 14;
+        H = 15;
+        I = 6;
+        J = 4;
+        K = false;
+        L = false;
+        P = 1;
+        Q = 1;
+        R = 805306368;
+        S = null;
+        a = var1;
+        b = var2;
         if (var3 != null && var3.indexOf(".") > 0) {
-            this.c = var3.substring(0, var3.indexOf("."));
+            c = var3.substring(0, var3.indexOf("."));
         } else {
-            this.c = var3;
+            c = var3;
         }
 
         byte var10;
         label86:
         {
-            this.a();
-            String var8 = this.b;
+            a();
+            String var8 = b;
             int var9 = var8.hashCode();
             if (var9 != 32) {
                 if (var9 != 104) {
@@ -200,52 +200,52 @@ public class Ts extends RelativeLayout {
 
         switch (var10) {
             case 0:
-                this.u = 4;
-                this.d = 4;
+                u = 4;
+                d = 4;
                 break;
             case 1:
-                this.w = 8;
-                this.x = 5;
-                this.d = 2;
+                w = 8;
+                x = 5;
+                d = 2;
                 break;
             case 2:
-                this.d = 3;
-                this.w = 4;
+                d = 3;
+                w = 4;
                 break;
             case 3:
-                this.d = 3;
+                d = 3;
                 break;
             case 4:
-                this.u = 4;
-                this.d = 10;
+                u = 4;
+                d = 10;
                 break;
             case 5:
-                this.u = 4;
-                this.d = 12;
+                u = 4;
+                d = 12;
                 break;
             case 6:
-                this.u = 4;
-                this.d = 5;
+                u = 4;
+                d = 5;
                 break;
             case 7:
-                this.u = 8;
-                this.d = 7;
+                u = 8;
+                d = 7;
                 break;
             case 8:
-                this.d = 9;
+                d = 9;
                 break;
             case 9:
             case 10:
             case 11:
             case 12:
             case 13:
-                this.d = 1;
+                d = 1;
         }
 
-        this.e = this.R;
-        this.g = var4;
-        this.setWillNotDraw(false);
-        this.a(var1);
+        e = R;
+        g = var4;
+        setWillNotDraw(false);
+        a(var1);
     }
 
     public Ts(Context var1, String var2, boolean var3) {
@@ -254,8 +254,8 @@ public class Ts extends RelativeLayout {
 
     private float[] getBooleanReflections() {
         float[] var1 = new float[8];
-        int var2 = this.A / 2;
-        int var3 = this.P;
+        int var2 = A / 2;
+        int var3 = P;
         var1[0] = (float) (0 + var3 / 2);
         float var4 = (float) var2;
         var1[1] = var4;
@@ -263,17 +263,17 @@ public class Ts extends RelativeLayout {
         var1[3] = (float) (0 + var3 / 2);
         var1[4] = var4;
         var1[5] = (float) (0 + var3 / 2);
-        var1[6] = (float) (this.z - var2);
+        var1[6] = (float) (z - var2);
         var1[7] = (float) (0 + var3 / 2);
         return var1;
     }
 
     private float[] getBooleanShadows() {
         float[] var1 = new float[8];
-        int var2 = this.A;
+        int var2 = A;
         int var3 = var2 / 2;
-        int var4 = this.z;
-        int var5 = this.P;
+        int var4 = z;
+        int var5 = P;
         var1[0] = (float) (var4 - var5 / 2);
         float var6 = (float) var3;
         var1[1] = var6;
@@ -288,10 +288,10 @@ public class Ts extends RelativeLayout {
 
     private float[] getNumberBottomShadows() {
         float[] var1 = new float[4];
-        int var2 = this.A;
+        int var2 = A;
         int var3 = var2 / 2;
-        var1[0] = (float) (this.z - var3);
-        int var4 = this.P;
+        var1[0] = (float) (z - var3);
+        int var4 = P;
         var1[1] = (float) (var2 - var4 / 2);
         var1[2] = (float) var3;
         var1[3] = (float) (var2 - var4 / 2);
@@ -300,11 +300,11 @@ public class Ts extends RelativeLayout {
 
     private float[] getNumberTopReflections() {
         float[] var1 = new float[4];
-        int var2 = this.A / 2;
+        int var2 = A / 2;
         var1[0] = (float) var2;
-        int var3 = this.P;
+        int var3 = P;
         var1[1] = (float) (0 + var3 / 2);
-        var1[2] = (float) (this.z - var2);
+        var1[2] = (float) (z - var2);
         var1[3] = (float) (0 + var3 / 2);
         return var1;
     }
@@ -312,25 +312,25 @@ public class Ts extends RelativeLayout {
     private float[] getRectReflections() {
         float[] var1 = new float[8];
         var1[0] = 0.0F;
-        int var2 = this.P;
+        int var2 = P;
         var1[1] = (float) (0 + var2 / 2);
-        var1[2] = (float) (this.z - var2 / 2);
+        var1[2] = (float) (z - var2 / 2);
         var1[3] = (float) (0 + var2 / 2);
         var1[4] = (float) (0 + var2 / 2);
         var1[5] = 0.0F;
         var1[6] = (float) (0 + var2 / 2);
-        var1[7] = (float) (this.A - var2 / 2);
+        var1[7] = (float) (A - var2 / 2);
         return var1;
     }
 
     private float[] getRectShadows() {
         float[] var1 = new float[8];
-        int var2 = this.z;
-        int var3 = this.P;
+        int var2 = z;
+        int var3 = P;
         var1[0] = (float) (var2 - var3 / 2);
         var1[1] = 0.0F;
         var1[2] = (float) (var2 - var3 / 2);
-        int var4 = this.A;
+        int var4 = A;
         var1[3] = (float) (var4 - var3 / 2);
         var1[4] = (float) (var2 - var3 / 2);
         var1[5] = (float) (var4 - var3 / 2);
@@ -340,170 +340,170 @@ public class Ts extends RelativeLayout {
     }
 
     public void a() {
-        this.S = mq.a(this.b, this.c);
+        S = mq.a(b, c);
     }
 
     public void a(float var1, float var2, boolean var3) {
-        if (this.d == 9) {
-            this.z = (int) var1 + this.H;
+        if (d == 9) {
+            z = (int) var1 + H;
         } else {
-            this.z = (int) var1;
+            z = (int) var1;
         }
 
-        this.A = (int) var2;
+        A = (int) var2;
         if (var3) {
-            this.e();
+            e();
         }
 
     }
 
     public void a(Ts var1, boolean var2, boolean var3, int var4) {
-        this.e = -16777216;
-        this.d = var1.d;
-        this.z = var1.z;
-        this.A = var1.A;
-        this.B = var1.B;
-        this.C = var1.C;
+        e = -16777216;
+        d = var1.d;
+        z = var1.z;
+        A = var1.A;
+        B = var1.B;
+        C = var1.C;
         if (!var2) {
             if (var3) {
-                this.d = 4;
-                this.A = (int) (6.0F * this.D);
+                d = 4;
+                A = (int) (6.0F * D);
             } else if (var4 > 0) {
-                this.B = var4 - this.h;
+                B = var4 - h;
             }
         }
 
-        this.e();
+        e();
     }
 
     public final void a(Context var1) {
-        this.D = wB.a(var1, 1.0F);
-        float var2 = (float) this.h;
-        float var3 = this.D;
-        this.h = (int) (var2 * var3);
-        this.i = (int) (var3 * (float) this.i);
-        this.j = (int) (var3 * (float) this.j);
-        this.m = (int) (var3 * (float) this.m);
-        this.n = (int) (var3 * (float) this.n);
-        this.k = (int) (var3 * (float) this.k);
-        this.l = (int) (var3 * (float) this.l);
-        this.o = (int) (var3 * (float) this.o);
-        this.p = (int) (var3 * (float) this.p);
-        this.q = (int) (var3 * (float) this.q);
-        this.r = (int) (var3 * (float) this.r);
-        this.s = (int) (var3 * (float) this.s);
-        this.t = (int) (var3 * (float) this.t);
-        this.B = (int) (var3 * (float) this.B);
-        this.C = (int) (var3 * (float) this.C);
-        this.w = (int) (var3 * (float) this.w);
-        this.u = (int) (var3 * (float) this.u);
-        this.x = (int) (var3 * (float) this.x);
-        this.v = (int) (var3 * (float) this.v);
-        this.y = (int) (var3 * (float) this.y);
-        this.F = (int) (var3 * (float) this.F);
-        this.G = (int) (var3 * (float) this.G);
-        this.I = (int) (var3 * (float) this.I);
-        this.J = (int) (var3 * (float) this.J);
-        this.H = (int) (var3 * (float) this.H);
-        this.P = (int) (var3 * (float) this.P);
-        this.Q = (int) (var3 * (float) this.Q);
-        if (this.P < 2) {
-            this.P = 2;
+        D = wB.a(var1, 1.0F);
+        float var2 = (float) h;
+        float var3 = D;
+        h = (int) (var2 * var3);
+        i = (int) (var3 * (float) i);
+        j = (int) (var3 * (float) j);
+        m = (int) (var3 * (float) m);
+        n = (int) (var3 * (float) n);
+        k = (int) (var3 * (float) k);
+        l = (int) (var3 * (float) l);
+        o = (int) (var3 * (float) o);
+        p = (int) (var3 * (float) p);
+        q = (int) (var3 * (float) q);
+        r = (int) (var3 * (float) r);
+        s = (int) (var3 * (float) s);
+        t = (int) (var3 * (float) t);
+        B = (int) (var3 * (float) B);
+        C = (int) (var3 * (float) C);
+        w = (int) (var3 * (float) w);
+        u = (int) (var3 * (float) u);
+        x = (int) (var3 * (float) x);
+        v = (int) (var3 * (float) v);
+        y = (int) (var3 * (float) y);
+        F = (int) (var3 * (float) F);
+        G = (int) (var3 * (float) G);
+        I = (int) (var3 * (float) I);
+        J = (int) (var3 * (float) J);
+        H = (int) (var3 * (float) H);
+        P = (int) (var3 * (float) P);
+        Q = (int) (var3 * (float) Q);
+        if (P < 2) {
+            P = 2;
         }
 
-        if (this.Q < 2) {
-            this.Q = 2;
+        if (Q < 2) {
+            Q = 2;
         }
 
-        this.f = new Paint();
-        if (!this.g) {
-            this.K = true;
-            this.L = true;
+        f = new Paint();
+        if (!g) {
+            K = true;
+            L = true;
         }
 
-        this.M = new Paint();
-        this.M.setColor(-536870912);
-        this.M.setStrokeWidth((float) this.P);
-        this.N = new Paint();
-        this.N.setColor(-1610612736);
-        this.N.setStyle(Paint.Style.STROKE);
-        this.N.setStrokeWidth((float) this.P);
-        this.O = new Paint();
-        this.O.setColor(-1593835521);
-        this.O.setStyle(Paint.Style.STROKE);
-        this.O.setStrokeWidth((float) this.Q);
-        this.setLayerType(View.LAYER_TYPE_SOFTWARE, (Paint) null);
-        this.a((float) this.F, (float) (this.G + this.u + this.v), false);
+        M = new Paint();
+        M.setColor(-536870912);
+        M.setStrokeWidth((float) P);
+        N = new Paint();
+        N.setColor(-1610612736);
+        N.setStyle(Paint.Style.STROKE);
+        N.setStrokeWidth((float) P);
+        O = new Paint();
+        O.setColor(-1593835521);
+        O.setStyle(Paint.Style.STROKE);
+        O.setStrokeWidth((float) Q);
+        setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+        a((float) F, (float) (G + u + v), false);
     }
 
     public final void a(Canvas var1) {
         Path var2 = new Path();
-        int var3 = this.A;
+        int var3 = A;
         int var4 = var3 / 2;
         float var5 = (float) var4;
         var2.moveTo(var5, (float) var3);
         var2.lineTo(0.0F, var5);
         var2.lineTo(var5, 0.0F);
-        var2.lineTo((float) (this.z - var4), 0.0F);
-        var2.lineTo((float) this.z, var5);
-        var2.lineTo((float) (this.z - var4), (float) this.A);
-        var1.drawPath(var2, this.f);
-        if (this.K) {
-            var1.drawLines(this.getBooleanShadows(), this.N);
+        var2.lineTo((float) (z - var4), 0.0F);
+        var2.lineTo((float) z, var5);
+        var2.lineTo((float) (z - var4), (float) A);
+        var1.drawPath(var2, f);
+        if (K) {
+            var1.drawLines(getBooleanShadows(), N);
         }
 
-        if (this.L) {
-            var1.drawLines(this.getBooleanReflections(), this.O);
+        if (L) {
+            var1.drawLines(getBooleanReflections(), O);
         }
 
     }
 
     public final void a(Path var1) {
-        var1.moveTo(0.0F, (float) this.k);
-        var1.lineTo((float) this.k, 0.0F);
-        var1.lineTo((float) this.o, 0.0F);
-        var1.lineTo((float) this.p, (float) this.h);
-        var1.lineTo((float) this.q, (float) this.h);
-        var1.lineTo((float) this.r, 0.0F);
-        var1.lineTo((float) (this.z - this.k), 0.0F);
-        var1.lineTo((float) this.z, (float) this.k);
+        var1.moveTo(0.0F, (float) k);
+        var1.lineTo((float) k, 0.0F);
+        var1.lineTo((float) o, 0.0F);
+        var1.lineTo((float) p, (float) h);
+        var1.lineTo((float) q, (float) h);
+        var1.lineTo((float) r, 0.0F);
+        var1.lineTo((float) (z - k), 0.0F);
+        var1.lineTo((float) z, (float) k);
     }
 
     public final void a(Path var1, int var2) {
-        var1.lineTo((float) this.j, (float) (var2 - this.l));
-        float var3 = (float) (this.j + this.l);
+        var1.lineTo((float) j, (float) (var2 - l));
+        float var3 = (float) (j + l);
         float var4 = (float) var2;
         var1.lineTo(var3, var4);
-        var1.lineTo((float) (this.z - this.k), var4);
-        var1.lineTo((float) this.z, (float) (var2 + this.k));
+        var1.lineTo((float) (z - k), var4);
+        var1.lineTo((float) z, (float) (var2 + k));
     }
 
     public final void a(Path var1, int var2, boolean var3, int var4) {
-        var1.lineTo((float) this.z, (float) (var2 - this.k));
-        float var5 = (float) (this.z - this.k);
+        var1.lineTo((float) z, (float) (var2 - k));
+        float var5 = (float) (z - k);
         float var6 = (float) var2;
         var1.lineTo(var5, var6);
         if (var3) {
-            var1.lineTo((float) (var4 + this.r), var6);
-            var1.lineTo((float) (var4 + this.q), (float) (var2 + this.h));
-            var1.lineTo((float) (var4 + this.p), (float) (var2 + this.h));
-            var1.lineTo((float) (var4 + this.o), var6);
+            var1.lineTo((float) (var4 + r), var6);
+            var1.lineTo((float) (var4 + q), (float) (var2 + h));
+            var1.lineTo((float) (var4 + p), (float) (var2 + h));
+            var1.lineTo((float) (var4 + o), var6);
         }
 
         if (var4 > 0) {
-            var1.lineTo((float) (var4 + this.l), var6);
-            var1.lineTo((float) var4, (float) (var2 + this.l));
+            var1.lineTo((float) (var4 + l), var6);
+            var1.lineTo((float) var4, (float) (var2 + l));
         } else {
-            var1.lineTo((float) (var4 + this.k), var6);
-            var1.lineTo(0.0F, (float) (var2 - this.k));
+            var1.lineTo((float) (var4 + k), var6);
+            var1.lineTo(0.0F, (float) (var2 - k));
         }
     }
 
     public final float[] a(int var1) {
         float[] var2 = new float[24];
-        int var3 = this.P;
+        int var3 = P;
         var2[0] = (float) (0 + var3 / 2);
-        int var4 = this.k;
+        int var4 = k;
         var2[1] = (float) (var1 - var4);
         var2[2] = (float) (0 + var3 / 2);
         var2[3] = (float) var4;
@@ -513,32 +513,32 @@ public class Ts extends RelativeLayout {
         var2[7] = (float) (0 + var3 / 2);
         var2[8] = (float) var4;
         var2[9] = (float) (0 + var3 / 2);
-        var2[10] = (float) this.o;
+        var2[10] = (float) o;
         var2[11] = (float) (0 + var3 / 2);
-        var2[12] = (float) this.p;
-        int var5 = this.h;
+        var2[12] = (float) p;
+        int var5 = h;
         var2[13] = (float) (var5 + var3 / 2);
-        int var6 = this.q;
+        int var6 = q;
         var2[14] = (float) var6;
         var2[15] = (float) (var5 + var3 / 2);
         var2[16] = (float) var6;
         var2[17] = (float) (var5 + var3 / 2);
-        int var7 = this.r;
+        int var7 = r;
         var2[18] = (float) var7;
         var2[19] = (float) (0 + var3 / 2);
         var2[20] = (float) var7;
         var2[21] = (float) (0 + var3 / 2);
-        var2[22] = (float) (this.z - var4);
+        var2[22] = (float) (z - var4);
         var2[23] = (float) (0 + var3 / 2);
         return var2;
     }
 
     public final float[] a(int var1, int var2) {
         float[] var3 = new float[8];
-        int var4 = this.j;
-        int var5 = this.l;
+        int var4 = j;
+        int var5 = l;
         var3[0] = (float) (var4 + var5);
-        int var6 = this.P;
+        int var6 = P;
         var3[1] = (float) (var1 - var6 / 2);
         var3[2] = (float) (var4 - var6 / 2);
         var3[3] = (float) (var1 + var5);
@@ -557,40 +557,40 @@ public class Ts extends RelativeLayout {
             var4 = new float[8];
         }
 
-        int var5 = this.z;
+        int var5 = z;
         var4[0] = (float) var5;
-        int var6 = this.k;
+        int var6 = k;
         int var7 = var1 - var6;
-        int var8 = this.P;
+        int var8 = P;
         var4[1] = (float) (var7 - var8 / 2);
         var4[2] = (float) (var5 - var6);
         var4[3] = (float) (var1 - var8 / 2);
         if (var2) {
             var4[4] = (float) (var5 - var6);
             var4[5] = (float) (var1 - var8 / 2);
-            int var9 = this.r;
+            int var9 = r;
             var4[6] = (float) (var3 + var9);
             var4[7] = (float) (var1 - var8 / 2);
             var4[8] = (float) (var9 + var3);
             var4[9] = (float) (var1 - var8 / 2);
-            int var10 = this.q;
+            int var10 = q;
             var4[10] = (float) (var3 + var10);
-            int var11 = this.h;
+            int var11 = h;
             var4[11] = (float) (var1 + var11 - var8 / 2);
             var4[12] = (float) (var10 + var3);
             var4[13] = (float) (var1 + var11 - var8 / 2);
-            int var12 = this.p;
+            int var12 = p;
             var4[14] = (float) (var3 + var12);
             var4[15] = (float) (var1 + var11 - var8 / 2);
             var4[16] = (float) (var12 + var3);
             var4[17] = (float) (var11 + var1 - var8 / 2);
-            int var13 = this.o;
+            int var13 = o;
             var4[18] = (float) (var3 + var13);
             var4[19] = (float) (var1 - var8 / 2);
             if (var3 > 0) {
                 var4[20] = (float) (var13 + var3);
                 var4[21] = (float) (var1 - var8 / 2);
-                var4[22] = (float) (var3 + this.l);
+                var4[22] = (float) (var3 + l);
                 var4[23] = (float) (var1 - var8 / 2);
                 return var4;
             } else {
@@ -603,7 +603,7 @@ public class Ts extends RelativeLayout {
         } else if (var3 > 0) {
             var4[4] = (float) (var5 - var6);
             var4[5] = (float) (var1 - var8 / 2);
-            var4[6] = (float) (var3 + this.l);
+            var4[6] = (float) (var3 + l);
             var4[7] = (float) (var1 - var8 / 2);
             return var4;
         } else {
@@ -617,45 +617,41 @@ public class Ts extends RelativeLayout {
 
     public final void b(Canvas var1) {
         Path var2 = new Path();
-        this.a(var2);
-        int var3 = this.A;
-        int var4 = this.d;
+        a(var2);
+        int var3 = A;
+        int var4 = d;
         boolean var5 = true;
         boolean var6;
-        if (var4 != 5) {
-            var6 = true;
-        } else {
-            var6 = false;
-        }
+        var6 = var4 != 5;
 
-        this.a(var2, var3, var6, 0);
-        var1.drawPath(var2, this.f);
-        if (this.K) {
-            var1.drawLines(this.b(0, this.A), this.N);
-            int var7 = this.A;
-            if (this.d == 5) {
+        a(var2, var3, var6, 0);
+        var1.drawPath(var2, f);
+        if (K) {
+            var1.drawLines(b(0, A), N);
+            int var7 = A;
+            if (d == 5) {
                 var5 = false;
             }
 
-            var1.drawLines(this.a(var7, var5, 0), this.N);
+            var1.drawLines(a(var7, var5, 0), N);
         }
 
-        if (this.L) {
-            var1.drawLines(this.a(this.A), this.O);
+        if (L) {
+            var1.drawLines(a(A), O);
         }
 
     }
 
     public boolean b() {
-        return this.d >= 10;
+        return d >= 10;
     }
 
     public final float[] b(int var1, int var2) {
         float[] var3 = new float[4];
-        int var4 = this.z;
-        int var5 = this.P;
+        int var4 = z;
+        int var5 = P;
         var3[0] = (float) (var4 - var5 / 2);
-        int var6 = this.k;
+        int var6 = k;
         var3[1] = (float) (var1 + var6);
         var3[2] = (float) (var4 - var5 / 2);
         var3[3] = (float) (var2 - var6);
@@ -663,281 +659,277 @@ public class Ts extends RelativeLayout {
     }
 
     public final void c(Canvas var1) {
-        var1.drawRect(new Rect(0, 0, this.z, this.A), this.f);
+        var1.drawRect(new Rect(0, 0, z, A), f);
         Path var2 = new Path();
-        int var3 = this.z;
-        int var4 = this.J;
+        int var3 = z;
+        int var4 = J;
         var2.moveTo((float) (var3 - var4), (float) var4);
-        int var5 = this.z;
-        int var6 = this.J;
+        int var5 = z;
+        int var6 = J;
         int var7 = var5 - var6;
-        int var8 = this.I;
+        int var8 = I;
         var2.lineTo((float) (var7 - var8 / 2), (float) (var6 + var8));
-        int var9 = this.z;
-        int var10 = this.J;
-        var2.lineTo((float) (var9 - var10 - this.I), (float) var10);
-        var1.drawPath(var2, this.M);
+        int var9 = z;
+        int var10 = J;
+        var2.lineTo((float) (var9 - var10 - I), (float) var10);
+        var1.drawPath(var2, M);
     }
 
     public boolean c() {
-        return this.d == 12;
+        return d == 12;
     }
 
     public final float[] c(int var1, int var2) {
         float[] var3 = new float[4];
-        var3[0] = (float) (var2 + this.l);
-        int var4 = this.P;
+        var3[0] = (float) (var2 + l);
+        int var4 = P;
         var3[1] = (float) (var1 + var4 / 2);
-        var3[2] = (float) (this.z - this.k);
+        var3[2] = (float) (z - k);
         var3[3] = (float) (var1 + var4 / 2);
         return var3;
     }
 
     public int d() {
-        return this.getTotalHeight() - this.h;
+        return getTotalHeight() - h;
     }
 
     public final void d(Canvas var1) {
         Path var2 = new Path();
-        var2.moveTo(0.0F, (float) this.s);
-        var2.arcTo(new RectF(0.0F, 0.0F, (float) this.t, (float) (2 * this.s)), 180.0F, 180.0F);
-        var2.lineTo((float) (this.z - this.k), (float) this.s);
-        var2.lineTo((float) this.z, (float) (this.s + this.k));
-        this.a(var2, this.A, true, 0);
-        var1.drawPath(var2, this.f);
-        if (this.K) {
-            var1.drawLines(this.b(this.s, this.A), this.N);
-            var1.drawLines(this.a(this.A, true, 0), this.N);
+        var2.moveTo(0.0F, (float) s);
+        var2.arcTo(new RectF(0.0F, 0.0F, (float) t, (float) (2 * s)), 180.0F, 180.0F);
+        var2.lineTo((float) (z - k), (float) s);
+        var2.lineTo((float) z, (float) (s + k));
+        a(var2, A, true, 0);
+        var1.drawPath(var2, f);
+        if (K) {
+            var1.drawLines(b(s, A), N);
+            var1.drawLines(a(A, true, 0), N);
         }
 
     }
 
     public void e() {
-        this.requestLayout();
+        requestLayout();
     }
 
     public final void e(Canvas var1) {
         Path var2 = new Path();
-        int var3 = this.A + this.B;
-        int var4 = this.h;
+        int var3 = A + B;
+        int var4 = h;
         int var5 = var3 - var4;
-        int var6 = var5 + this.n + this.C - var4;
-        this.a(var2);
-        this.a(var2, this.A, true, this.j);
-        this.a(var2, var5);
-        this.a(var2, var5 + this.n, true, this.j);
-        this.a(var2, var6);
-        this.a(var2, var6 + this.m, true, 0);
-        var1.drawPath(var2, this.f);
-        if (this.K) {
-            var1.drawLines(this.b(0, this.A), this.N);
-            var1.drawLines(this.a(this.A, true, this.j), this.N);
-            var1.drawLines(this.a(this.A, var5), this.N);
-            var1.drawLines(this.b(var5, var5 + this.n), this.N);
-            var1.drawLines(this.a(var5 + this.n, true, this.j), this.N);
-            var1.drawLines(this.a(var5 + this.n, var6), this.N);
-            var1.drawLines(this.b(var6, var6 + this.m), this.N);
-            var1.drawLines(this.a(var6 + this.m, true, 0), this.N);
+        int var6 = var5 + n + C - var4;
+        a(var2);
+        a(var2, A, true, j);
+        a(var2, var5);
+        a(var2, var5 + n, true, j);
+        a(var2, var6);
+        a(var2, var6 + m, true, 0);
+        var1.drawPath(var2, f);
+        if (K) {
+            var1.drawLines(b(0, A), N);
+            var1.drawLines(a(A, true, j), N);
+            var1.drawLines(a(A, var5), N);
+            var1.drawLines(b(var5, var5 + n), N);
+            var1.drawLines(a(var5 + n, true, j), N);
+            var1.drawLines(a(var5 + n, var6), N);
+            var1.drawLines(b(var6, var6 + m), N);
+            var1.drawLines(a(var6 + m, true, 0), N);
         }
 
-        if (this.L) {
-            var1.drawLines(this.a(var6 + this.m), this.O);
-            var1.drawLines(this.c(var5, this.j), this.O);
-            var1.drawLines(this.c(var6, this.j), this.O);
+        if (L) {
+            var1.drawLines(a(var6 + m), O);
+            var1.drawLines(c(var5, j), O);
+            var1.drawLines(c(var6, j), O);
         }
 
     }
 
     public int f() {
-        return this.A;
+        return A;
     }
 
     public final void f(Canvas var1) {
         Path var2 = new Path();
-        int var3 = this.A + this.B - this.h;
-        this.a(var2);
-        int var4 = this.A;
-        int var5 = this.j;
+        int var3 = A + B - h;
+        a(var2);
+        int var4 = A;
+        int var5 = j;
         boolean var6 = true;
-        this.a(var2, var4, var6, var5);
-        this.a(var2, var3);
-        int var7 = var3 + this.m;
+        a(var2, var4, var6, var5);
+        a(var2, var3);
+        int var7 = var3 + m;
         boolean var8;
-        if (this.d == 10) {
-            var8 = true;
-        } else {
-            var8 = false;
-        }
+        var8 = d == 10;
 
-        this.a(var2, var7, var8, 0);
-        var1.drawPath(var2, this.f);
-        if (this.K) {
-            var1.drawLines(this.b(0, this.A), this.N);
-            var1.drawLines(this.a(this.A, var6, this.j), this.N);
-            var1.drawLines(this.a(this.A, var3), this.N);
-            var1.drawLines(this.b(var3, var3 + this.m), this.N);
-            int var9 = var3 + this.m;
-            if (this.d != 10) {
+        a(var2, var7, var8, 0);
+        var1.drawPath(var2, f);
+        if (K) {
+            var1.drawLines(b(0, A), N);
+            var1.drawLines(a(A, var6, j), N);
+            var1.drawLines(a(A, var3), N);
+            var1.drawLines(b(var3, var3 + m), N);
+            int var9 = var3 + m;
+            if (d != 10) {
                 var6 = false;
             }
 
-            var1.drawLines(this.a(var9, var6, 0), this.N);
+            var1.drawLines(a(var9, var6, 0), N);
         }
 
-        if (this.L) {
-            var1.drawLines(this.a(var3 + this.m), this.O);
-            var1.drawLines(this.c(var3, this.j), this.O);
+        if (L) {
+            var1.drawLines(a(var3 + m), O);
+            var1.drawLines(c(var3, j), O);
         }
 
     }
 
     public int g() {
-        return this.A + this.B + this.n - this.h;
+        return A + B + n - h;
     }
 
     public final void g(Canvas var1) {
         Path var2 = new Path();
-        int var3 = this.A;
+        int var3 = A;
         int var4 = var3 / 2;
         var2.moveTo((float) var4, (float) var3);
-        int var5 = this.A;
+        int var5 = A;
         var2.arcTo(new RectF(0.0F, 0.0F, (float) var5, (float) var5), 90.0F, 180.0F);
-        var2.lineTo((float) (this.z - var4), 0.0F);
-        int var6 = this.z;
-        int var7 = this.A;
+        var2.lineTo((float) (z - var4), 0.0F);
+        int var6 = z;
+        int var7 = A;
         var2.arcTo(new RectF((float) (var6 - var7), 0.0F, (float) var6, (float) var7), 270.0F, 180.0F);
-        var1.drawPath(var2, this.f);
-        if (this.K) {
-            int var16 = this.z;
-            int var17 = this.A;
+        var1.drawPath(var2, f);
+        if (K) {
+            int var16 = z;
+            int var17 = A;
             float var18 = (float) (var16 - var17);
-            int var19 = this.P;
-            var1.drawArc(new RectF(var18, 0.0F, (float) (var16 - var19 / 2), (float) (var17 - var19 / 2)), 330.0F, 120.0F, false, this.N);
-            var1.drawLines(this.getNumberBottomShadows(), this.N);
-            int var20 = this.P;
+            int var19 = P;
+            var1.drawArc(new RectF(var18, 0.0F, (float) (var16 - var19 / 2), (float) (var17 - var19 / 2)), 330.0F, 120.0F, false, N);
+            var1.drawLines(getNumberBottomShadows(), N);
+            int var20 = P;
             float var21 = (float) (0 + var20 / 2);
-            int var22 = this.A;
-            var1.drawArc(new RectF(var21, 0.0F, (float) var22, (float) (var22 - var20 / 2)), 90.0F, 30.0F, false, this.N);
+            int var22 = A;
+            var1.drawArc(new RectF(var21, 0.0F, (float) var22, (float) (var22 - var20 / 2)), 90.0F, 30.0F, false, N);
         }
 
-        if (this.L) {
-            int var8 = this.P;
+        if (L) {
+            int var8 = P;
             float var9 = (float) (0 + var8 / 2);
             float var10 = (float) (0 + var8 / 2);
-            int var11 = this.A;
-            var1.drawArc(new RectF(var9, var10, (float) var11, (float) var11), 150.0F, 120.0F, false, this.O);
-            var1.drawLines(this.getNumberTopReflections(), this.O);
-            int var12 = this.z;
-            int var13 = this.A;
+            int var11 = A;
+            var1.drawArc(new RectF(var9, var10, (float) var11, (float) var11), 150.0F, 120.0F, false, O);
+            var1.drawLines(getNumberTopReflections(), O);
+            int var12 = z;
+            int var13 = A;
             float var14 = (float) (var12 - var13);
-            int var15 = this.P;
-            var1.drawArc(new RectF(var14, (float) (0 + var15 / 2), (float) (var12 - var15 / 2), (float) var13), 270.0F, 30.0F, false, this.O);
+            int var15 = P;
+            var1.drawArc(new RectF(var14, (float) (0 + var15 / 2), (float) (var12 - var15 / 2), (float) var13), 270.0F, 30.0F, false, O);
         }
 
     }
 
     public Gx getClassInfo() {
-        if (this.S == null) {
-            this.a();
+        if (S == null) {
+            a();
         }
 
-        return this.S;
+        return S;
     }
 
     public int getTopH() {
-        return this.A;
+        return A;
     }
 
     public int getTotalHeight() {
-        int var1 = this.A;
-        if (this.b()) {
-            var1 += this.n + this.B - this.h;
+        int var1 = A;
+        if (b()) {
+            var1 += n + B - h;
         }
 
-        if (this.c()) {
-            var1 += this.m + this.C - this.h;
+        if (c()) {
+            var1 += m + C - h;
         }
 
-        int var2 = this.d;
+        int var2 = d;
         if (var2 == 4 || var2 == 7 || var2 == 10 || var2 == 12) {
-            var1 += this.h;
+            var1 += h;
         }
 
         return var1;
     }
 
     public int getTotalWidth() {
-        return this.z;
+        return z;
     }
 
     public int getW() {
-        return this.z;
+        return z;
     }
 
     public final void h(Canvas var1) {
-        var1.drawRect(new Rect(0, 0, this.z, this.A), this.f);
-        if (this.K) {
-            var1.drawLines(this.getRectShadows(), this.N);
+        var1.drawRect(new Rect(0, 0, z, A), f);
+        if (K) {
+            var1.drawLines(getRectShadows(), N);
         }
 
-        if (this.L) {
-            var1.drawLines(this.getRectReflections(), this.O);
+        if (L) {
+            var1.drawLines(getRectReflections(), O);
         }
 
     }
 
     public void onDraw(Canvas var1) {
-        this.f.setColor(this.e);
-        switch (this.d) {
+        f.setColor(e);
+        switch (d) {
             case 1:
-                this.h(var1);
+                h(var1);
                 break;
             case 2:
-                this.a(var1);
+                a(var1);
                 break;
             case 3:
-                this.g(var1);
+                g(var1);
                 break;
             case 4:
             case 5:
-                this.b(var1);
+                b(var1);
             case 6:
             case 8:
             default:
                 break;
             case 7:
-                this.d(var1);
+                d(var1);
                 break;
             case 9:
-                this.c(var1);
+                c(var1);
                 break;
             case 10:
             case 11:
-                this.f(var1);
+                f(var1);
                 break;
             case 12:
-                this.e(var1);
+                e(var1);
         }
 
         super.onDraw(var1);
     }
 
     public void onMeasure(int var1, int var2) {
-        super.onMeasure(MeasureSpec.makeMeasureSpec(this.getTotalWidth(), MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(this.getTotalHeight(), MeasureSpec.EXACTLY));
+        super.onMeasure(MeasureSpec.makeMeasureSpec(getTotalWidth(), MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(getTotalHeight(), MeasureSpec.EXACTLY));
     }
 
     public void setSubstack1Height(int var1) {
-        int var2 = Math.max(var1, this.i);
-        if (var2 != this.B) {
-            this.B = var2;
+        int var2 = Math.max(var1, i);
+        if (var2 != B) {
+            B = var2;
         }
 
     }
 
     public void setSubstack2Height(int var1) {
-        int var2 = Math.max(var1, this.i);
-        if (var2 != this.C) {
-            this.C = var2;
+        int var2 = Math.max(var1, i);
+        if (var2 != C) {
+            C = var2;
         }
 
     }

@@ -24,48 +24,48 @@ public class BlockPane extends RelativeLayout {
     public ArrayList e = new ArrayList();
     public Object[] f = null;
     public int g = 10;
-    public float h = wB.a(this.getContext(), 1.0F);
+    public float h = wB.a(getContext(), 1.0F);
 
     public BlockPane(Context var1) {
         super(var1);
-        this.a(var1);
+        a(var1);
     }
 
     public Rs a(int var1) {
-        return (Rs) this.findViewWithTag(Integer.valueOf(var1));
+        return findViewWithTag(Integer.valueOf(var1));
     }
 
     public Rs a(Rs var1, int var2, int var3) {
-        this.getLocationOnScreen(this.b);
+        getLocationOnScreen(b);
         if (var1.getBlockType() == 1) {
-            Context var4 = this.getContext();
-            int var5 = this.g;
-            this.g = var5 + 1;
+            Context var4 = getContext();
+            int var5 = g;
+            g = var5 + 1;
             Rs var6 = new Rs(var4, var5, var1.T, var1.b, var1.c, var1.U);
             var1 = var6;
         }
 
         var1.pa = this;
-        this.addView(var1);
-        var1.setX((float) (var2 - this.b[0] - this.getPaddingLeft()));
-        var1.setY((float) (var3 - this.b[1] - this.getPaddingTop()));
+        addView(var1);
+        var1.setX((float) (var2 - b[0] - getPaddingLeft()));
+        var1.setY((float) (var3 - b[1] - getPaddingTop()));
         return var1;
     }
 
     public Rs a(Rs var1, int var2, int var3, boolean var4) {
         Rs var5;
         if (!var4) {
-            var5 = this.a(var1, var2, var3);
+            var5 = a(var1, var2, var3);
         } else {
-            var1.setX((float) (var2 - this.b[0] - this.getPaddingLeft()));
-            var1.setY((float) (var3 - this.b[1] - this.getPaddingTop()));
+            var1.setX((float) (var2 - b[0] - getPaddingLeft()));
+            var1.setY((float) (var3 - b[1] - getPaddingTop()));
             var5 = var1;
         }
 
-        Object[] var6 = this.f;
+        Object[] var6 = f;
         if (var6 == null) {
             var5.p().k();
-            this.b();
+            b();
             return var5;
         } else {
             if (var1.fa) {
@@ -95,37 +95,33 @@ public class BlockPane extends RelativeLayout {
             }
 
             var5.p().k();
-            this.b();
+            b();
             return var5;
         }
     }
 
     public Rs a(String var1) {
-        return (Rs) this.findViewWithTag(Integer.valueOf(var1));
+        return findViewWithTag(Integer.valueOf(var1));
     }
 
     public final void a() {
-        if (this.c == null) {
-            this.c = new Ts(this.a, " ", true);
+        if (c == null) {
+            c = new Ts(a, " ", true);
         }
 
-        this.c.a(10.0F, 10.0F, false);
-        this.addView(this.c);
-        this.d();
+        c.a(10.0F, 10.0F, false);
+        addView(c);
+        d();
     }
 
     public void a(Rs var1) {
         boolean var2 = var1.h().ga;
         boolean var3;
-        if (var1.b() && -1 == var1.ia) {
-            var3 = true;
-        } else {
-            var3 = false;
-        }
+        var3 = var1.b() && -1 == var1.ia;
 
         boolean var4 = var1.fa;
-        this.a(var1.getTag().toString(), var2, var3, var4, var1.getHeight(), var1.f());
-        this.f = null;
+        a(var1.getTag().toString(), var2, var3, var4, var1.getHeight(), var1.f());
+        f = null;
     }
 
     public void a(Rs var1, int var2) {
@@ -137,27 +133,27 @@ public class BlockPane extends RelativeLayout {
                 while (var3.hasNext()) {
                     View var7 = (View) var3.next();
                     if (var7 instanceof Rs) {
-                        this.a((Rs) var7, var2);
+                        a((Rs) var7, var2);
                     }
                 }
 
                 if (var1.b()) {
                     int var6 = var1.ia;
                     if (var6 != -1) {
-                        this.a((Rs) this.findViewWithTag(Integer.valueOf(var6)), var2);
+                        a(findViewWithTag(Integer.valueOf(var6)), var2);
                     }
                 }
 
                 if (var1.c()) {
                     int var5 = var1.ja;
                     if (var5 != -1) {
-                        this.a((Rs) this.findViewWithTag(Integer.valueOf(var5)), var2);
+                        a(findViewWithTag(Integer.valueOf(var5)), var2);
                     }
                 }
 
                 int var4 = var1.ha;
                 if (var4 != -1) {
-                    var1 = (Rs) this.findViewWithTag(Integer.valueOf(var4));
+                    var1 = findViewWithTag(Integer.valueOf(var4));
                     continue;
                 }
             }
@@ -176,9 +172,9 @@ public class BlockPane extends RelativeLayout {
                         if ((var8 || var7 instanceof Ss) && (!var8 || !var7.getTag().toString().equals(var2))) {
                             int[] var9 = new int[2];
                             var7.getLocationOnScreen(var9);
-                            this.a(var9, var7, 0);
+                            a(var9, var7, 0);
                             if (var8) {
-                                this.a((Rs) var7, var2);
+                                a((Rs) var7, var2);
                             }
                         }
                     }
@@ -186,17 +182,17 @@ public class BlockPane extends RelativeLayout {
 
                 int var3 = var1.ia;
                 if (var3 != -1) {
-                    this.a((Rs) this.findViewWithTag(Integer.valueOf(var3)), var2);
+                    a(findViewWithTag(Integer.valueOf(var3)), var2);
                 }
 
                 int var4 = var1.ja;
                 if (var4 != -1) {
-                    this.a((Rs) this.findViewWithTag(Integer.valueOf(var4)), var2);
+                    a(findViewWithTag(Integer.valueOf(var4)), var2);
                 }
 
                 int var5 = var1.ha;
                 if (var5 != -1) {
-                    var1 = (Rs) this.findViewWithTag(Integer.valueOf(var5));
+                    var1 = findViewWithTag(Integer.valueOf(var5));
                     continue;
                 }
             }
@@ -207,7 +203,7 @@ public class BlockPane extends RelativeLayout {
 
     public void a(Rs var1, ArrayList var2) {
         if (var2.size() <= 0) {
-            this.a(var1);
+            a(var1);
         } else {
             BlockBean var3;
             BlockBean var4;
@@ -273,14 +269,10 @@ public class BlockPane extends RelativeLayout {
 
             boolean var9 = var4.type.equals("f");
             boolean var10;
-            if ((var3.type.equals("c") || var3.type.equals("e")) && var3.subStack1 <= 0) {
-                var10 = true;
-            } else {
-                var10 = false;
-            }
+            var10 = (var3.type.equals("c") || var3.type.equals("e")) && var3.subStack1 <= 0;
 
-            this.a(var3.id, var9, var10, var8, var1.getHeight(), var1.f());
-            this.f = null;
+            a(var3.id, var9, var10, var8, var1.getHeight(), var1.f());
+            f = null;
         }
     }
 
@@ -290,7 +282,7 @@ public class BlockPane extends RelativeLayout {
                 int[] var8 = new int[2];
                 var1.getLocationOnScreen(var8);
                 var8[1] += var1.d();
-                this.a(var8, var1, 0);
+                a(var8, var1, 0);
             }
 
             if (var1.b() && (!var2 || var1.ia == -1)) {
@@ -298,7 +290,7 @@ public class BlockPane extends RelativeLayout {
                 var1.getLocationOnScreen(var7);
                 var7[0] += var1.j;
                 var7[1] += var1.f();
-                this.a(var7, var1, 2);
+                a(var7, var1, 2);
             }
 
             if (var1.c() && (!var2 || var1.ja == -1)) {
@@ -306,17 +298,17 @@ public class BlockPane extends RelativeLayout {
                 var1.getLocationOnScreen(var6);
                 var6[0] += var1.j;
                 var6[1] += var1.g();
-                this.a(var6, var1, 3);
+                a(var6, var1, 3);
             }
 
             int var3 = var1.ia;
             if (var3 != -1) {
-                this.a((Rs) this.findViewWithTag(Integer.valueOf(var3)), var2);
+                a(findViewWithTag(Integer.valueOf(var3)), var2);
             }
 
             int var4 = var1.ja;
             if (var4 != -1) {
-                this.a((Rs) this.findViewWithTag(Integer.valueOf(var4)), var2);
+                a(findViewWithTag(Integer.valueOf(var4)), var2);
             }
 
             int var5 = var1.ha;
@@ -324,14 +316,14 @@ public class BlockPane extends RelativeLayout {
                 return;
             }
 
-            var1 = (Rs) this.findViewWithTag(Integer.valueOf(var5));
+            var1 = findViewWithTag(Integer.valueOf(var5));
         }
 
     }
 
     public final void a(Context var1) {
-        this.a = var1;
-        this.a();
+        a = var1;
+        a();
     }
 
     public void a(BlockBean var1, boolean var2) {
@@ -341,17 +333,17 @@ public class BlockPane extends RelativeLayout {
                 return;
             }
 
-            Rs var4 = (Rs) this.findViewWithTag(Integer.valueOf(var1.id));
+            Rs var4 = findViewWithTag(Integer.valueOf(var1.id));
             if (var4 == null) {
                 return;
             }
 
             Rs var5 = var4.E;
             if (var4 != var5) {
-                this.c(var4);
-                this.removeView(var4);
+                c(var4);
+                removeView(var4);
             } else {
-                this.removeView(var4);
+                removeView(var4);
             }
 
             if (var2 && var5 != null) {
@@ -362,21 +354,21 @@ public class BlockPane extends RelativeLayout {
     }
 
     public void a(String var1, String var2) {
-        Rs var3 = new Rs(this.getContext(), 0, var1, "h", var2);
-        this.d = var3;
-        Rs var4 = this.d;
+        Rs var3 = new Rs(getContext(), 0, var1, "h", var2);
+        d = var3;
+        Rs var4 = d;
         var4.pa = this;
-        this.addView(var4);
-        float var5 = wB.a(this.getContext(), 1.0F);
-        Rs var6 = this.d;
+        addView(var4);
+        float var5 = wB.a(getContext(), 1.0F);
+        Rs var6 = d;
         float var7 = var5 * 8.0F;
         var6.setX(var7);
-        this.d.setY(var7);
+        d.setY(var7);
     }
 
     public void a(String str, boolean z, boolean z2, boolean z3, int i, int i2) {
-        this.e = new ArrayList();
-        int i3 = (int) (3.0f * this.h);
+        e = new ArrayList();
+        int i3 = (int) (3.0f * h);
         for (int i4 = 0; i4 < getChildCount(); i4++) {
             View childAt = getChildAt(i4);
             if (childAt instanceof Rs) {
@@ -391,14 +383,14 @@ public class BlockPane extends RelativeLayout {
                             iArr = new int[2];
                             rs.getLocationOnScreen(iArr);
                             iArr[1] = iArr[1] - (i - i3);
-                            a(iArr, (View) rs, 1);
+                            a(iArr, rs, 1);
                         }
                         if (z2 && !rs.ea) {
                             iArr = new int[2];
                             rs.getLocationOnScreen(iArr);
                             iArr[0] = iArr[0] - rs.j;
                             iArr[1] = iArr[1] - (i2 - i3);
-                            a(iArr, (View) rs, 4);
+                            a(iArr, rs, 4);
                         }
                         if (!z || z2) {
                             z4 = false;
@@ -412,7 +404,7 @@ public class BlockPane extends RelativeLayout {
 
     public final void a(int[] var1, View var2, int var3) {
         Object[] var4 = new Object[]{var1, var2, Integer.valueOf(var3)};
-        this.e.add(var4);
+        e.add(var4);
     }
 
     public final boolean a(Rs var1, View var2) {
@@ -434,9 +426,7 @@ public class BlockPane extends RelativeLayout {
                     return true;
                 }
 
-                if (var2 instanceof Rs && var3.a(mq.b(((Rs) var2).ra))) {
-                    return true;
-                }
+                return var2 instanceof Rs && var3.a(mq.b(((Rs) var2).ra));
             }
 
             return false;
@@ -444,12 +434,12 @@ public class BlockPane extends RelativeLayout {
     }
 
     public void b() {
-        int var1 = this.getChildCount();
-        int var2 = this.getLayoutParams().width;
-        int var3 = this.getLayoutParams().width;
+        int var1 = getChildCount();
+        int var2 = getLayoutParams().width;
+        int var3 = getLayoutParams().width;
 
         for (int var4 = 0; var4 < var1; ++var4) {
-            View var5 = this.getChildAt(var4);
+            View var5 = getChildAt(var4);
             if (var5 instanceof Rs) {
                 float var6 = var5.getX();
                 Rs var7 = (Rs) var5;
@@ -458,25 +448,25 @@ public class BlockPane extends RelativeLayout {
             }
         }
 
-        this.getLayoutParams().width = var2;
-        this.getLayoutParams().height = var3;
+        getLayoutParams().width = var2;
+        getLayoutParams().height = var3;
     }
 
     public void b(Rs var1) {
-        this.c(var1);
+        c(var1);
         Iterator var2 = var1.getAllChildren().iterator();
 
         while (var2.hasNext()) {
-            this.removeView((Rs) var2.next());
+            removeView((Rs) var2.next());
         }
 
     }
 
     public boolean b(String var1) {
-        int var2 = this.getChildCount();
+        int var2 = getChildCount();
 
         for (int var3 = 0; var3 < var2; ++var3) {
-            View var4 = this.getChildAt(var3);
+            View var4 = getChildAt(var3);
             if (var4 instanceof Rs) {
                 BlockBean var5;
                 byte var7;
@@ -645,7 +635,7 @@ public class BlockPane extends RelativeLayout {
                     case 4:
                     case 5:
                     case 6:
-                        if (((String) var5.parameters.get(0)).equals(var1)) {
+                        if (var5.parameters.get(0).equals(var1)) {
                             return true;
                         }
                         break;
@@ -660,7 +650,7 @@ public class BlockPane extends RelativeLayout {
                     case 15:
                     case 16:
                     case 17:
-                        if (((String) var5.parameters.get(1)).equals(var1)) {
+                        if (var5.parameters.get(1).equals(var1)) {
                             return true;
                         }
                         break;
@@ -668,13 +658,13 @@ public class BlockPane extends RelativeLayout {
                     case 19:
                     case 20:
                     case 21:
-                        if (((String) var5.parameters.get(2)).equals(var1)) {
+                        if (var5.parameters.get(2).equals(var1)) {
                             return true;
                         }
                         break;
                     case 22:
                     case 23:
-                        if (((String) var5.parameters.get(3)).equals(var1)) {
+                        if (var5.parameters.get(3).equals(var1)) {
                             return true;
                         }
                 }
@@ -696,12 +686,12 @@ public class BlockPane extends RelativeLayout {
         Object[] var6 = null;
         Point var7 = new Point(var2, var3);
 
-        for (int var8 = 0; var8 < this.e.size(); ++var8) {
-            Object[] var9 = (Object[]) this.e.get(var8);
+        for (int var8 = 0; var8 < e.size(); ++var8) {
+            Object[] var9 = (Object[]) e.get(var8);
             int[] var10 = (int[]) var9[0];
             Point var11 = new Point(var7.x - var10[0], var7.y - var10[1]);
             int var12 = Math.abs(var11.x / 2) + Math.abs(var11.y);
-            if (var12 < var5 && var12 < var4 && this.a(var1, (View) var9[1])) {
+            if (var12 < var5 && var12 < var4 && a(var1, (View) var9[1])) {
                 var6 = var9;
                 var5 = var12;
             }
@@ -711,9 +701,9 @@ public class BlockPane extends RelativeLayout {
     }
 
     public void c() {
-        this.d();
-        this.e = new ArrayList();
-        this.f = null;
+        d();
+        e = new ArrayList();
+        f = null;
     }
 
     public void c(Rs var1) {
@@ -730,54 +720,54 @@ public class BlockPane extends RelativeLayout {
     public void c(Rs rs, int i, int i2) {
         Object[] objArr;
         int intValue;
-        getLocationOnScreen(this.b);
-        this.f = b(rs, i, i2);
+        getLocationOnScreen(b);
+        f = b(rs, i, i2);
         if (rs.b() && -1 == rs.ia) {
-            objArr = this.f;
+            objArr = f;
             if (objArr != null) {
                 Rs rs2 = (Rs) objArr[1];
                 intValue = ((Integer) objArr[2]).intValue();
                 if (intValue == 0) {
-                    rs2 = (Rs) findViewWithTag(Integer.valueOf(rs2.ha));
+                    rs2 = findViewWithTag(Integer.valueOf(rs2.ha));
                 } else if (intValue == 2) {
-                    rs2 = (Rs) findViewWithTag(Integer.valueOf(rs2.ia));
+                    rs2 = findViewWithTag(Integer.valueOf(rs2.ia));
                 } else if (intValue == 3) {
-                    rs2 = (Rs) findViewWithTag(Integer.valueOf(rs2.ja));
+                    rs2 = findViewWithTag(Integer.valueOf(rs2.ja));
                 }
             }
         }
-        objArr = this.f;
+        objArr = f;
         if (objArr != null) {
             int[] iArr = (int[]) objArr[0];
             View view = (View) objArr[1];
-            this.c.setX((float) (iArr[0] - this.b[0]));
-            this.c.setY((float) (iArr[1] - this.b[1]));
-            this.c.bringToFront();
-            this.c.setVisibility(View.VISIBLE);
+            c.setX((float) (iArr[0] - b[0]));
+            c.setY((float) (iArr[1] - b[1]));
+            c.bringToFront();
+            c.setVisibility(View.VISIBLE);
             if (rs.fa) {
                 if (view instanceof Rs) {
-                    this.c.a((Rs) view, true, false, 0);
+                    c.a((Rs) view, true, false, 0);
                 }
                 if (view instanceof Ss) {
-                    this.c.a((Ss) view, true, false, 0);
+                    c.a((Ss) view, true, false, 0);
                     return;
                 }
                 return;
             }
-            int intValue2 = ((Integer) this.f[2]).intValue();
+            int intValue2 = ((Integer) f[2]).intValue();
             intValue = intValue2 == 4 ? ((Rs) view).getHeightSum() : 0;
-            boolean z = (intValue2 == 1 || intValue2 == 4) ? false : true;
-            this.c.a(rs, false, z, intValue);
+            boolean z = intValue2 != 1 && intValue2 != 4;
+            c.a(rs, false, z, intValue);
             return;
         }
         d();
     }
 
     public boolean c(String var1) {
-        int var2 = this.getChildCount();
+        int var2 = getChildCount();
 
         for (int var3 = 0; var3 < var2; ++var3) {
-            View var4 = this.getChildAt(var3);
+            View var4 = getChildAt(var3);
             if (var4 instanceof Rs) {
                 BlockBean var5;
                 byte var7;
@@ -933,17 +923,17 @@ public class BlockPane extends RelativeLayout {
                     case 15:
                     case 16:
                     case 17:
-                        if (((String) var5.parameters.get(0)).equals(var1)) {
+                        if (var5.parameters.get(0).equals(var1)) {
                             return true;
                         }
                         break;
                     case 18:
-                        if (((String) var5.parameters.get(1)).equals(var1)) {
+                        if (var5.parameters.get(1).equals(var1)) {
                             return true;
                         }
                         break;
                     case 19:
-                        if (((String) var5.parameters.get(2)).equals(var1)) {
+                        if (var5.parameters.get(2).equals(var1)) {
                             return true;
                         }
                 }
@@ -954,11 +944,11 @@ public class BlockPane extends RelativeLayout {
     }
 
     public void d() {
-        this.c.setVisibility(View.GONE);
+        c.setVisibility(View.GONE);
     }
 
     public int getAddTargetId() {
-        Object[] var1 = this.getNearestTarget();
+        Object[] var1 = getNearestTarget();
         int var2 = -1;
         if (var1 != null && var1[2] != null) {
             int var3 = ((Integer) var1[2]).intValue();
@@ -984,7 +974,7 @@ public class BlockPane extends RelativeLayout {
 
     public ArrayList getBlocks() {
         ArrayList var1 = new ArrayList();
-        Rs var2 = (Rs) this.findViewWithTag(Integer.valueOf(this.d.ha));
+        Rs var2 = findViewWithTag(Integer.valueOf(d.ha));
         if (var2 != null) {
             Iterator var3 = var2.getAllChildren().iterator();
 
@@ -997,10 +987,10 @@ public class BlockPane extends RelativeLayout {
     }
 
     public Object[] getNearestTarget() {
-        return this.f;
+        return f;
     }
 
     public Rs getRoot() {
-        return this.d;
+        return d;
     }
 }

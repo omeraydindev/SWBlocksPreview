@@ -8,7 +8,7 @@ import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
-import ma.swblockspreview.BlockPreviewer.BlockBean;
+import ma.swblockspreview.bean.BlockBean;
 
 public class MainActivity extends Activity {
     private BlockPreviewer blockPreviewer;

@@ -1,9 +1,5 @@
 package ma.swblockspreview.bean;
 
-import android.annotation.SuppressLint;
-import android.os.Parcel;
-import android.os.Parcelable;
-
 import com.google.gson.annotations.Expose;
 
 import java.util.ArrayList;
@@ -11,17 +7,7 @@ import java.util.ArrayList;
 import ma.swblockspreview.util.Gx;
 import ma.swblockspreview.util.mq;
 
-@SuppressLint("ParcelCreator") // TODO
-public class BlockBean extends SelectableBean implements Parcelable {
-    /*public static final Creator CREATOR = new Creator() {
-        public BlockBean createFromParcel(Parcel var1) {
-            return new BlockBean(var1);
-        }
-
-        public BlockBean[] newArray(int var1) {
-            return new BlockBean[var1];
-        }
-    };*/
+public class BlockBean {
     public Gx classInfo;
     @Expose
     public int color;
@@ -52,20 +38,6 @@ public class BlockBean extends SelectableBean implements Parcelable {
         nextBlock = -1;
     }
 
-    public BlockBean(Parcel var1) {
-        id = var1.readString();
-        spec = var1.readString();
-        type = var1.readString();
-        typeName = var1.readString();
-        opCode = var1.readString();
-        color = var1.readInt();
-        parameters = (ArrayList) var1.readSerializable();
-        subStack1 = var1.readInt();
-        subStack2 = var1.readInt();
-        nextBlock = var1.readInt();
-        buildClassInfo();
-    }
-
     public BlockBean(String var1, String var2, String var3, String var4) {
         this(var1, var2, var3, "", var4);
     }
@@ -88,9 +60,6 @@ public class BlockBean extends SelectableBean implements Parcelable {
         paramClassInfo = mq.a(spec);
     }
 
-    /*public static Creator getCreator() {
-        return CREATOR;
-    }*/
     public BlockBean clone() {
         BlockBean var1 = new BlockBean();
         var1.copy(this);
@@ -109,10 +78,6 @@ public class BlockBean extends SelectableBean implements Parcelable {
         subStack2 = var1.subStack2;
         nextBlock = var1.nextBlock;
         buildClassInfo();
-    }
-
-    public int describeContents() {
-        return 0;
     }
 
     public Gx getClassInfo() {
@@ -182,16 +147,4 @@ public class BlockBean extends SelectableBean implements Parcelable {
     public void print() {
     }
 
-    public void writeToParcel(Parcel var1, int var2) {
-        var1.writeString(id);
-        var1.writeString(spec);
-        var1.writeString(type);
-        var1.writeString(typeName);
-        var1.writeString(opCode);
-        var1.writeInt(color);
-        var1.writeSerializable(parameters);
-        var1.writeInt(subStack1);
-        var1.writeInt(subStack2);
-        var1.writeInt(nextBlock);
-    }
 }

@@ -6,8 +6,8 @@ public class Gx {
     public String a;
     public String[] b;
 
-    public Gx(String var1) {
-        a = var1;
+    public Gx(String classInfo) {
+        a = classInfo;
         b = null;
         e();
     }
@@ -16,23 +16,17 @@ public class Gx {
         return a;
     }
 
-    public boolean a(Gx var1) {
-        return a(var1.a);
+    public boolean a(Gx gx) {
+        return a(gx.a);
     }
 
-    public boolean a(String var1) {
-        if (var1.equals(a)) {
+    public boolean a(String classInfo) {
+        if (classInfo.equals("!") || classInfo.equals(a)) {
             return true;
         } else {
-            String[] var2 = b;
-            int var3 = var2.length;
-
-            for (int var4 = 0; var4 < var3; ++var4) {
-                if (var2[var4].equals(var1)) {
-                    return true;
-                }
+            for (String s : b) {
+                if (s.equals(classInfo)) return true;
             }
-
             return false;
         }
     }
@@ -41,8 +35,8 @@ public class Gx {
         return a("List");
     }
 
-    public boolean b(String var1) {
-        return a.equals(var1);
+    public boolean b(String classInfo) {
+        return a.equals(classInfo);
     }
 
     public boolean c() {
@@ -53,456 +47,372 @@ public class Gx {
         return a("View");
     }
 
-    public final void e() {
-        String var2;
-        String var4;
-        byte var5;
-        label209:
-        {
-            String var1 = a;
-            var2 = BV.a(var1);
-            int var3 = var1.hashCode();
-            var4 = "View";
-            switch (var3) {
-                case -2099895620:
-                    if (var1.equals("Intent")) {
-                        var5 = 26;
-                        break label209;
-                    }
-                    break;
-                case -1965257499:
-                    if (var1.equals("Gyroscope")) {
-                        var5 = 37;
-                        break label209;
-                    }
-                    break;
-                case -1936496017:
-                    if (var1.equals("ListString")) {
-                        var5 = 5;
-                        break label209;
-                    }
-                    break;
-                case -1908172204:
-                    if (var1.equals("FirebaseStorage")) {
-                        var5 = 38;
-                        break label209;
-                    }
-                    break;
-                case -1884914774:
-                    if (var1.equals("TextToSpeech")) {
-                        var5 = 43;
-                        break label209;
-                    }
-                    break;
-                case -1808118735:
-                    if (var1.equals("String")) {
-                        var5 = 2;
-                        break label209;
-                    }
-                    break;
-                case -1805606060:
-                    if (var1.equals("Switch")) {
-                        var5 = 17;
-                        break label209;
-                    }
-                    break;
-                case -1793532415:
-                    if (var1.equals("MapView")) {
-                        var5 = 21;
-                        break label209;
-                    }
-                    break;
-                case -1495589242:
-                    if (var1.equals("ProgressBar")) {
-                        var5 = 42;
-                        break label209;
-                    }
-                    break;
-                case -1406842887:
-                    if (var1.equals("WebView")) {
-                        var5 = 16;
-                        break label209;
-                    }
-                    break;
-                case -1325958191:
-                    if (var1.equals("double")) {
-                        var5 = 1;
-                        break label209;
-                    }
-                    break;
-                case -1125439882:
-                    if (var1.equals("HorizontalScrollView")) {
-                        var5 = 25;
-                        break label209;
-                    }
-                    break;
-                case -1042830870:
-                    if (var1.equals("SpeechToText")) {
-                        var5 = 44;
-                        break label209;
-                    }
-                    break;
-                case -1014653761:
-                    if (var1.equals("RequestNetwork")) {
-                        var5 = 41;
-                        break label209;
-                    }
-                    break;
-                case -938935918:
-                    if (var1.equals("TextView")) {
-                        var5 = 9;
-                        break label209;
-                    }
-                    break;
-                case -658531749:
-                    if (var1.equals("SeekBar")) {
-                        var5 = 18;
-                        break label209;
-                    }
-                    break;
-                case -596330166:
-                    if (var1.equals("FilePicker")) {
-                        var5 = 40;
-                        break label209;
-                    }
-                    break;
-                case -339785223:
-                    if (var1.equals("Spinner")) {
-                        var5 = 14;
-                        break label209;
-                    }
-                    break;
-                case -294086120:
-                    if (var1.equals("LocationManager")) {
-                        var5 = 46;
-                        break label209;
-                    }
-                    break;
-                case -188272861:
-                    if (var1.equals("CalendarView")) {
-                        var5 = 19;
-                        break label209;
-                    }
-                    break;
-                case -113680546:
-                    if (var1.equals("Calendar")) {
-                        var5 = 28;
-                        break label209;
-                    }
-                    break;
-                case 77116:
-                    if (var1.equals("Map")) {
-                        var5 = 3;
-                        break label209;
-                    }
-                    break;
-                case 2368702:
-                    if (var1.equals("List")) {
-                        var5 = 7;
-                        break label209;
-                    }
-                    break;
-                case 2666181:
-                    if (var1.equals(var4)) {
-                        var5 = 8;
-                        break label209;
-                    }
-                    break;
-                case 64711720:
-                    if (var1.equals("boolean")) {
-                        var5 = 0;
-                        break label209;
-                    }
-                    break;
-                case 80811813:
-                    if (var1.equals("Timer")) {
-                        var5 = 30;
-                        break label209;
-                    }
-                    break;
-                case 191354283:
-                    if (var1.equals("SoundPool")) {
-                        var5 = 33;
-                        break label209;
-                    }
-                    break;
-                case 225459311:
-                    if (var1.equals("FirebaseAuth")) {
-                        var5 = 36;
-                        break label209;
-                    }
-                    break;
-                case 1100433486:
-                    if (var1.equals("FloatingActionButton")) {
-                        var5 = 22;
-                        break label209;
-                    }
-                    break;
-                case 1125864064:
-                    if (var1.equals("ImageView")) {
-                        var5 = 12;
-                        break label209;
-                    }
-                    break;
-                case 1127291599:
-                    if (var1.equals("LinearLayout")) {
-                        var5 = 23;
-                        break label209;
-                    }
-                    break;
-                case 1170382393:
-                    if (var1.equals("Vibrator")) {
-                        var5 = 29;
-                        break label209;
-                    }
-                    break;
-                case 1236935621:
-                    if (var1.equals("MediaPlayer")) {
-                        var5 = 32;
-                        break label209;
-                    }
-                    break;
-                case 1410352259:
-                    if (var1.equals("ListView")) {
-                        var5 = 15;
-                        break label209;
-                    }
-                    break;
-                case 1512362620:
-                    if (var1.equals("BluetoothConnect")) {
-                        var5 = 45;
-                        break label209;
-                    }
-                    break;
-                case 1601505219:
-                    if (var1.equals("CheckBox")) {
-                        var5 = 13;
-                        break label209;
-                    }
-                    break;
-                case 1616304435:
-                    if (var1.equals("SharedPreferences")) {
-                        var5 = 27;
-                        break label209;
-                    }
-                    break;
-                case 1666676343:
-                    if (var1.equals("EditText")) {
-                        var5 = 11;
-                        break label209;
-                    }
-                    break;
-                case 1779003621:
-                    if (var1.equals("FirebaseDB")) {
-                        var5 = 35;
-                        break label209;
-                    }
-                    break;
-                case 1799376742:
-                    if (var1.equals("ObjectAnimator")) {
-                        var5 = 34;
-                        break label209;
-                    }
-                    break;
-                case 1846598225:
-                    if (var1.equals("ListInt")) {
-                        var5 = 4;
-                        break label209;
-                    }
-                    break;
-                case 1846601662:
-                    if (var1.equals("ListMap")) {
-                        var5 = 6;
-                        break label209;
-                    }
-                    break;
-                case 1955913096:
-                    if (var1.equals("AdView")) {
-                        var5 = 20;
-                        break label209;
-                    }
-                    break;
-                case 2001146706:
-                    if (var1.equals("Button")) {
-                        var5 = 10;
-                        break label209;
-                    }
-                    break;
-                case 2011082565:
-                    if (var1.equals("Camera")) {
-                        var5 = 39;
-                        break label209;
-                    }
-                    break;
-                case 2046749032:
-                    if (var1.equals("Dialog")) {
-                        var5 = 31;
-                        break label209;
-                    }
-                    break;
-                case 2059813682:
-                    if (var1.equals("ScrollView")) {
-                        var5 = 24;
-                        break label209;
-                    }
-                    break;
-                case 2059883587:
-                    if (var1.equals("RadioButton")) {
-                        var5 = 47;
-                        break label209;
-                    }
-            }
+    private void e() {
+        String classInfos = "";
+        switch (a) {
+            case "boolean":
+                classInfos = "Var.boolean";
+                break;
 
-            var5 = -1;
-        }
+            case "double":
+                classInfos = "Var.double";
+                break;
 
-        switch (var5) {
-            case 0:
-                var4 = "Var.boolean";
+            case "String":
+                classInfos = "Var.String";
                 break;
-            case 1:
-                var4 = "Var.double";
+
+            case "Map":
+                classInfos = "Var.Map";
                 break;
-            case 2:
-                var4 = "Var.String";
+
+            case "ListInt":
+                classInfos = "List.ListInt";
                 break;
-            case 3:
-                var4 = "Var.Map";
+
+            case "ListString":
+                classInfos = "List.ListString";
                 break;
-            case 4:
-                var4 = "List.ListInt";
+
+            case "ListMap":
+                classInfos = "List.ListMap";
                 break;
-            case 5:
-                var4 = "List.ListString";
+
+            case "List":
+                classInfos = "List";
                 break;
-            case 6:
-                var4 = "List.ListMap";
+
+            case "View":
                 break;
-            case 7:
-                var4 = "List";
-            case 8:
+
+            case "TextView":
+                classInfos = "View.Clickable.TextView";
                 break;
-            case 9:
-                var4 = "View.Clickable.TextView";
+
+            case "Button":
+                classInfos = "View.Clickable.TextView.Button";
                 break;
-            case 10:
-                var4 = "View.Clickable.TextView.Button";
+
+            case "EditText":
+                classInfos = "View.Clickable.TextView.EditText";
                 break;
-            case 11:
-                var4 = "View.Clickable.TextView.EditText";
+
+            case "ImageView":
+                classInfos = "View.Clickable.ImageView";
                 break;
-            case 12:
-                var4 = "View.Clickable.ImageView";
+
+            case "CheckBox":
+                classInfos = "View.Clickable.TextView.Button.CompoundButton.CheckBox";
                 break;
-            case 13:
-                var4 = "View.Clickable.TextView.Button.CompoundButton.CheckBox";
+
+            case "Spinner":
+                classInfos = "View.AdapterView.AbsSpinner.Spinner";
                 break;
-            case 14:
-                var4 = "View.AdapterView.AbsSpinner.Spinner";
+
+            case "ListView":
+                classInfos = "View.AdapterView.AbsListView.ListView";
                 break;
-            case 15:
-                var4 = "View.AdapterView.AbsListView.ListView";
+
+            case "WebView":
+                classInfos = "View.AbsoluteLayout.WebView";
                 break;
-            case 16:
-                var4 = "View.AbsoluteLayout.WebView";
+
+            case "Switch":
+                classInfos = "View.Clickable.TextView.Button.CompoundButton.Switch";
                 break;
-            case 17:
-                var4 = "View.Clickable.TextView.Button.CompoundButton.Switch";
+
+            case "SeekBar":
+                classInfos = "View.SeekBar";
                 break;
-            case 18:
-                var4 = "View.SeekBar";
+
+            case "CalendarView":
+                classInfos = "View.FrameLayout.CalendarView";
                 break;
-            case 19:
-                var4 = "View.FrameLayout.CalendarView";
+
+            case "AdView":
+                classInfos = "View.AdView";
                 break;
-            case 20:
-                var4 = "View.AdView";
+
+            case "MapView":
+                classInfos = "View.MapView";
                 break;
-            case 21:
-                var4 = "View.MapView";
+
+            case "FloatingActionButton":
+                classInfos = "View.Clickable.FloatingActionButton";
                 break;
-            case 22:
-                var4 = "View.Clickable.FloatingActionButton";
+
+            case "LinearLayout":
+                classInfos = "View.Clickable.ViewGroup.LinearLayout";
                 break;
-            case 23:
-                var4 = "View.Clickable.ViewGroup.LinearLayout";
+
+            case "ScrollView":
+                classInfos = "View.ViewGroup.FrameLayout.ScrollView";
                 break;
-            case 24:
-                var4 = "View.ViewGroup.FrameLayout.ScrollView";
+
+            case "HorizontalScrollView":
+                classInfos = "View.ViewGroup.FrameLayout.HorizontalScrollView";
                 break;
-            case 25:
-                var4 = "View.ViewGroup.FrameLayout.HorizontalScrollView";
+
+            case "Intent":
+                classInfos = "Component.Intent";
                 break;
-            case 26:
-                var4 = "Component.Intent";
+
+            case "SharedPreferences":
+                classInfos = "Component.SharedPreferences";
                 break;
-            case 27:
-                var4 = "Component.SharedPreferences";
+
+            case "Calendar":
+                classInfos = "Component.Calendar";
                 break;
-            case 28:
-                var4 = "Component.Calendar";
+
+            case "Vibrator":
+                classInfos = "Component.Vibrator";
                 break;
-            case 29:
-                var4 = "Component.Vibrator";
+
+            case "Timer":
+                classInfos = "Component.Timer";
                 break;
-            case 30:
-                var4 = "Component.Timer";
+
+            case "Dialog":
+                classInfos = "Component.Dialog";
                 break;
-            case 31:
-                var4 = "Component.Dialog";
+
+            case "MediaPlayer":
+                classInfos = "Component.MediaPlayer";
                 break;
-            case 32:
-                var4 = "Component.MediaPlayer";
+
+            case "SoundPool":
+                classInfos = "Component.SoundPool";
                 break;
-            case 33:
-                var4 = "Component.SoundPool";
+
+            case "ObjectAnimator":
+                classInfos = "Component.ObjectAnimator";
                 break;
-            case 34:
-                var4 = "Component.ObjectAnimator";
+
+            case "FirebaseDB":
+                classInfos = "Component.FirebaseDB";
                 break;
-            case 35:
-                var4 = "Component.FirebaseDB";
+
+            case "FirebaseAuth":
+                classInfos = "Component.FirebaseAuth";
                 break;
-            case 36:
-                var4 = "Component.FirebaseAuth";
+
+            case "Gyroscope":
+                classInfos = "Component.Gyroscope";
                 break;
-            case 37:
-                var4 = "Component.Gyroscope";
+
+            case "FirebaseStorage":
+                classInfos = "Component.FirebaseStorage";
                 break;
-            case 38:
-                var4 = "Component.FirebaseStorage";
+
+            case "Camera":
+                classInfos = "Component.Camera";
                 break;
-            case 39:
-                var4 = "Component.Camera";
+
+            case "FilePicker":
+                classInfos = "Component.FilePicker";
                 break;
-            case 40:
-                var4 = "Component.FilePicker";
+
+            case "RequestNetwork":
+                classInfos = "Component.RequestNetwork";
                 break;
-            case 41:
-                var4 = "Component.RequestNetwork";
+
+            case "ProgressBar":
+                classInfos = "View.SeekBar.ProgressBar";
                 break;
-            case 42:
-                var4 = "View.SeekBar.ProgressBar";
+
+            case "TextToSpeech":
+                classInfos = "Component.TextToSpeech";
                 break;
-            case 43:
-                var4 = "Component.TextToSpeech";
+
+            case "SpeechToText":
+                classInfos = "Component.SpeechToText";
                 break;
-            case 44:
-                var4 = "Component.SpeechToText";
+
+            case "BluetoothConnect":
+                classInfos = "Component.BluetoothConnect";
                 break;
-            case 45:
-                var4 = "Component.BluetoothConnect";
+
+            case "LocationManager":
+                classInfos = "Component.LocationManager";
                 break;
-            case 46:
-                var4 = "Component.LocationManager";
+
+            case "RadioButton":
+                classInfos = "View.Clickable.TextView.Button.CompoundButton.RadioButton";
                 break;
-            case 47:
-                var4 = "View.Clickable.TextView.Button.CompoundButton.RadioButton";
+
+            case "RatingBar":
+                classInfos = "View.Clickable.RatingBar";
                 break;
+
+            case "SearchView":
+                classInfos = "View.ViewGroup.LinearLayoutCompat.SearchView";
+                break;
+
+            case "VideoView":
+                classInfos = "View.VideoView";
+                break;
+
+            case "AutoCompleteTextView":
+                classInfos = "View.Clickable.TextView.EditText.AutoCompleteTextView";
+                break;
+
+            case "MultiAutoCompleteTextView":
+                classInfos = "View.Clickable.TextView.EditText.MultiAutoCompleteTextView";
+                break;
+
+            case "GridView":
+                classInfos = "View.ViewGroup.AdapterView.AbsListView.GridView";
+                break;
+
+            case "AnalogClock":
+                classInfos = "View.Clickable.AnalogClock";
+                break;
+
+            case "DigitalClock":
+                classInfos = "View.Clickable.DigitalClock";
+                break;
+
+            case "DatePicker":
+                classInfos = "View.Clickable.DatePicker";
+                break;
+
+            case "TimePicker":
+                classInfos = "View.Clickable.TimePicker";
+                break;
+
+            case "TabLayout":
+                classInfos = "View.TabLayout";
+                break;
+
+            case "ViewPager":
+                classInfos = "View.ViewGroup.AdapterView.ViewPager";
+                break;
+
+            case "BottomNavigationView":
+                classInfos = "View.ViewGroup.BottomNavigationView";
+                break;
+
+            case "BadgeView":
+                classInfos = "View.Clickable.FrameLayout.BadgeView";
+                break;
+
+            case "PatternLockView":
+                classInfos = "View.PatternLockView";
+                break;
+
+            case "WaveSideBar":
+                classInfos = "View.FrameLayout.RelativeLayout.WaveSideBar";
+                break;
+
+            case "SignInButton":
+                classInfos = "View.Clickable.Button.SignInButton";
+                break;
+
+            case "MaterialButton":
+                classInfos = "View.Clickable.TextView.Button";
+                break;
+
+            case "CircleImageView":
+                classInfos = "View.Clickable.ImageView.CircleImageView";
+                break;
+
+            case "CollapsingToolbarLayout":
+                classInfos = "View.ViewGroup.LinearLayout.CollapsingToolbarLayout";
+                break;
+
+            case "SwipeRefreshLayout":
+                classInfos = "View.ViewGroup.LinearLayout.SwipeRefreshLayout";
+                break;
+
+            case "TextInputLayout":
+                classInfos = "View.ViewGroup.LinearLayout.TextInputLayout";
+                break;
+
+            case "RadioGroup":
+                classInfos = "View.ViewGroup.LinearLayout.RadioGroup";
+                break;
+
+            case "CardView":
+                classInfos = "View.Clickable.ViewGroup.LinearLayout.CardView";
+                break;
+
+            case "LottieAnimationView":
+                classInfos = "View.Clickable.LottieAnimation";
+                break;
+
+            case "YoutubePlayerView":
+                classInfos = "View.Clickable.YoutubePlayer";
+                break;
+
+            case "OTPView":
+                classInfos = "View.Clickable.OTPView";
+                break;
+
+            case "RecyclerView":
+                classInfos = "View.RecyclerView";
+                break;
+
+            case "FBAdsInterstitial":
+                classInfos = "Component.FBAdsInterstitial";
+                break;
+
+            case "Videos":
+                classInfos = "Component.Videos";
+                break;
+
+            case "FirebaseAdmin":
+                classInfos = "Component.OneSignal";
+                break;
+
+            case "FirebaseCloudMessage":
+                classInfos = "Component.FirebaseCloudMessage";
+                break;
+
+            case "TimePickerDialog":
+                classInfos = "Component.TimePickerDialog";
+                break;
+
+            case "FBAdsBanner":
+                classInfos = "Component.FBAdsBanner";
+                break;
+
+            case "Notification":
+                classInfos = "Component.Notification";
+                break;
+
+            case "ProgressDialog":
+                classInfos = "Component.ProgressDialog";
+                break;
+
+            case "FirebaseGoogleLogin":
+                classInfos = "Component.FirebaseGoogleLogin";
+                break;
+
+            case "FirebaseDynamicLink":
+                classInfos = "Component.FirebaseDynamicLink";
+                break;
+
+            case "PopupMenu":
+                classInfos = "Component.PopupMenu";
+                break;
+
+            case "DatePickerDialog":
+                classInfos = "Component.DatePickerDialog";
+                break;
+
+            case "FirebasePhoneAuth":
+                classInfos = "Component.FirebasePhoneAuth";
+                break;
+
+            case "MediaController":
+                classInfos = "Component.MediaController";
+                break;
+
             default:
-                var4 = var2;
+                classInfos = "";
         }
 
-        b = var4.split("\\.");
+        b = classInfos.split("\\.");
     }
 }

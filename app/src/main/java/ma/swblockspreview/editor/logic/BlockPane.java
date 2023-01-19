@@ -33,21 +33,20 @@ public class BlockPane extends RelativeLayout {
         return findViewWithTag(Integer.valueOf(var1));
     }
 
-    public Rs a(Rs var1, int var2, int var3) {
+    public Rs a(Rs block, int x, int y) {
         getLocationOnScreen(b);
-        if (var1.getBlockType() == 1) {
+        if (block.getBlockType() == 1) {
             Context var4 = getContext();
             int var5 = g;
             g = var5 + 1;
-            Rs var6 = new Rs(var4, var5, var1.T, var1.b, var1.c, var1.U);
-            var1 = var6;
+            block = new Rs(var4, var5, block.T, block.b, block.c, block.U);
         }
 
-        var1.pa = this;
-        addView(var1);
-        var1.setX((float) (var2 - b[0] - getPaddingLeft()));
-        var1.setY((float) (var3 - b[1] - getPaddingTop()));
-        return var1;
+        block.pa = this;
+        addView(block);
+        block.setX((float) (x - b[0] - getPaddingLeft()));
+        block.setY((float) (y - b[1] - getPaddingTop()));
+        return block;
     }
 
     public Rs a(Rs var1, int var2, int var3, boolean var4) {

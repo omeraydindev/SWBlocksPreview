@@ -61,6 +61,7 @@ public class LogicEditorScrollView extends FrameLayout {
         }
     }
 
+    @Override
     public void addView(View var1) {
         if (getChildCount() <= 1) {
             super.addView(var1);
@@ -77,6 +78,7 @@ public class LogicEditorScrollView extends FrameLayout {
         return f;
     }
 
+    @Override
     public boolean onInterceptTouchEvent(MotionEvent var1) {
         if (!a()) {
             return false;
@@ -111,14 +113,15 @@ public class LogicEditorScrollView extends FrameLayout {
         }
     }
 
-    public boolean onTouchEvent(MotionEvent var1) {
+    @Override
+    public boolean onTouchEvent(MotionEvent motionEvent) {
         if (!a()) {
             return false;
         } else {
             View var2 = getChildAt(0);
-            int var3 = var1.getAction();
-            float var4 = var1.getX();
-            float var5 = var1.getY();
+            int var3 = motionEvent.getAction();
+            float var4 = motionEvent.getX();
+            float var5 = motionEvent.getY();
             if (var3 != 0) {
                 if (var3 == 1) {
                     g = -1.0F;
@@ -148,7 +151,7 @@ public class LogicEditorScrollView extends FrameLayout {
                         var6 = 0;
                     }
 
-                    var9 = Math.max(0 - getScrollX(), var6);
+                    var9 = Math.max(-getScrollX(), var6);
                 } else {
                     int var8 = var2.getRight() - getScrollX() - getWidth() - getPaddingRight();
                     if (var8 > 0) {
@@ -164,7 +167,7 @@ public class LogicEditorScrollView extends FrameLayout {
                         var7 = 0;
                     }
 
-                    var11 = Math.max(0 - getScrollY(), var7);
+                    var11 = Math.max(-getScrollY(), var7);
                 } else {
                     int var10 = var2.getBottom() - getScrollY() - getHeight() - getPaddingBottom();
                     var11 = 0;

@@ -122,7 +122,7 @@ public class Rs extends Ts {
     }
 
     public final void a(String var1, int var2) {
-        ArrayList<String> var3 = StringUtils.c(var1);
+        ArrayList<String> var3 = StringUtils.tokenize(var1);
         ka = new ArrayList<>();
         la = new ArrayList<>();
 
@@ -175,7 +175,7 @@ public class Rs extends Ts {
             }
         }
 
-        return a(StringUtils.d(var1));
+        return a(StringUtils.unescape(var1));
     }
 
     public void b(Rs var1) {

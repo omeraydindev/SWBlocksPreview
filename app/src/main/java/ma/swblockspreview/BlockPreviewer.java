@@ -1,5 +1,6 @@
 package ma.swblockspreview;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.view.View;
@@ -21,6 +22,8 @@ import ma.swblockspreview.util.LayoutUtils;
 
 public class BlockPreviewer {
     private Context context;
+    protected ViewBlockCollectionEditor viewBlockCollectionEditor;
+    protected BlockPane blockPane;
 
     public BlockPreviewer(Context context) {
         this.context = context;
@@ -31,7 +34,7 @@ public class BlockPreviewer {
         viewBlockCollectionEditor.setScrollEnabled(true);
         blockPane = viewBlockCollectionEditor.getBlockPane();
 
-        a(blocks, 8, 8);
+        previewBlocks(blocks, 8, 8);
         l();
 
         container.removeAllViews();
@@ -55,33 +58,38 @@ public class BlockPreviewer {
      * READ/MODIFY AT YOUR OWN RISK !!!
      */
 
-    ViewBlockCollectionEditor viewBlockCollectionEditor;
-    BlockPane blockPane;
 
-    private void a(ArrayList<BlockBean> var1, int var2, int var3) {
+    private void previewBlocks(ArrayList<BlockBean> blocks, int var2, int var3) {
         HashMap<Integer, Rs> var4 = new HashMap<>();
-        Iterator<BlockBean> var5 = var1.iterator();
+        Iterator<BlockBean> var5 = blocks.iterator();
         Rs var6 = null;
         boolean var7 = true;
 
         while (var5.hasNext()) {
-            Rs var21 = a(var5.next());
-            var4.put(Integer.valueOf(((Integer) var21.getTag()).intValue()), var21);
-            BlockPane var23 = blockPane;
-            var23.g = Math.max(var23.g, 1 + ((Integer) var21.getTag()).intValue());
-            blockPane.a(var21, var2, var3);
+            Rs block = getBlock(var5.next());
+            var4.put((Integer) block.getTag(), block);
+            blockPane.g = Math.max(blockPane.g, 1 + (Integer) block.getTag());
+            blockPane.a(block, var2, var3);
             if (var7) {
-                var6 = var21;
+                var6 = block;
                 var7 = false;
             }
         }
 
-        Iterator<BlockBean> var8 = var1.iterator();
+        Iterator<BlockBean> var8 = blocks.iterator();
 
         while (true) {
             BlockBean var9;
-            Rs var10;
-            do {
+            Rs block;
+            if (!var8.hasNext()) {
+                var6.k();
+                blockPane.b();
+                return;
+            }
+
+            var9 = var8.next();
+            block = var4.get(Integer.valueOf(var9.id));
+            while (block == null) {
                 if (!var8.hasNext()) {
                     var6.k();
                     blockPane.b();
@@ -89,50 +97,48 @@ public class BlockPreviewer {
                 }
 
                 var9 = var8.next();
-                var10 = var4.get(Integer.valueOf(var9.id));
-            } while (var10 == null);
+                block = var4.get(Integer.valueOf(var9.id));
+            }
 
-            int var11 = var9.subStack1;
-            if (var11 >= 0) {
-                Rs var20 = var4.get(Integer.valueOf(var11));
+            int subStack1 = var9.subStack1;
+            if (subStack1 >= 0) {
+                Rs var20 = var4.get(subStack1);
                 if (var20 != null) {
-                    var10.e(var20);
+                    block.e(var20);
                 }
             }
 
-            int var12 = var9.subStack2;
-            if (var12 >= 0) {
-                Rs var19 = var4.get(Integer.valueOf(var12));
+            int subStack2 = var9.subStack2;
+            if (subStack2 >= 0) {
+                Rs var19 = var4.get(subStack2);
                 if (var19 != null) {
-                    var10.f(var19);
+                    block.f(var19);
                 }
             }
 
-            int var13 = var9.nextBlock;
-            if (var13 >= 0) {
-                Rs var18 = var4.get(Integer.valueOf(var13));
+            int nextBlock = var9.nextBlock;
+            if (nextBlock >= 0) {
+                Rs var18 = var4.get(nextBlock);
                 if (var18 != null) {
-                    var10.b(var18);
+                    block.b(var18);
                 }
             }
 
-            int var14 = var9.parameters.size();
+            int paramsSize = var9.parameters.size();
 
-            for (int var15 = 0; var15 < var14; ++var15) {
-                String var16 = (String) var9.parameters.get(var15);
-                if (var16 != null && var16.length() > 0) {
-                    if (var16.charAt(0) == 64) {
-                        Rs var17 = var4.get(Integer.valueOf(Integer.valueOf(var16.substring(1)).intValue()));
-                        if (var17 != null && var10.V.size() > 0) {
-                            var10.a((Ts) var10.V.get(var15), var17);
+            for (int i = 0; i < paramsSize; ++i) {
+                String param = var9.parameters.get(i);
+                if (param != null && param.length() > 0) {
+                    if (param.charAt(0) == 64) {
+                        Rs var17 = var4.get(Integer.valueOf(param.substring(1)));
+                        if (var17 != null && block.V.size() > 0) {
+                            block.a((Ts) block.V.get(i), var17);
                         }
                     } else {
-                        if (var10.V.size() > 0) {
-                            ((Ss) var10.V.get(var15)).setArgValue(var16);
-
-                            _argOnClick(((Ss) var10.V.get(var15)));
-
-                            var10.m();
+                        if (block.V.size() > 0) {
+                            ((Ss) block.V.get(i)).setArgValue(param);
+                            argOnClick(((Ss) block.V.get(i)));
+                            block.m();
                         }
                     }
                 }
@@ -140,16 +146,14 @@ public class BlockPreviewer {
         }
     }
 
-    private Rs a(BlockBean var1) {
-        Rs var2 = new Rs(context, Integer.valueOf(var1.id).intValue(), var1.spec, var1.type, var1.typeName, var1.opCode);
-        var2.e = var1.color;
-
-        blockOnClick(var2, var1);
-
-        return var2;
+    private Rs getBlock(BlockBean bean) {
+        Rs block = new Rs(context, Integer.parseInt(bean.id), bean.spec, bean.type, bean.typeName, bean.opCode);
+        block.e = bean.color;
+        blockOnClick(block, bean);
+        return block;
     }
 
-    private void blockOnClick(Rs rs, final BlockBean bean) {
+    private void blockOnClick(Rs rs, BlockBean bean) {
         rs.setOnClickListener(v -> {
             StringBuilder info = new StringBuilder();
             info.append("opCode: ");
@@ -174,10 +178,8 @@ public class BlockPreviewer {
 
     }
 
-    private void _argOnClick(final Ss ss) {
-        ss.setOnClickListener(v -> {
-            dialog("Argument info", String.valueOf(ss.getArgValue()));
-        });
+    private void argOnClick(Ss ss) {
+        ss.setOnClickListener(v -> dialog("Argument info", String.valueOf(ss.getArgValue())));
     }
 
     private void dialog(String title, String message) {
@@ -196,22 +198,21 @@ public class BlockPreviewer {
     }
 
     private void l() {
-        int var1 = context.getResources().getDisplayMetrics().heightPixels;
+        int height = context.getResources().getDisplayMetrics().heightPixels;
         //  this.r.measure(0, 0);
-        int var2 = 0;//this.r.getMeasuredHeight();
-        LinearLayout.LayoutParams var3 = new LinearLayout.LayoutParams(-1, var1 - a(context) - f(context) - var2);
-        viewBlockCollectionEditor.setLayoutParams(var3);
+        int measureHeight = 0;//this.r.getMeasuredHeight();
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height - a(context) - getStatusBarHeight(context) - measureHeight);
+        viewBlockCollectionEditor.setLayoutParams(layoutParams);
         viewBlockCollectionEditor.requestLayout();
     }
 
-    private static int a(Context var0) {
-        return (int) LayoutUtils.getDip(var0, 48.0F);
+    private static int a(Context context) {
+        return (int) LayoutUtils.getDip(context, 48.0F);
     }
 
-    private static int f(Context var0) {
-        int var1 = var0.getResources().getIdentifier("status_bar_height", "dimen", "android");
-        return var1 > 0 ? var0.getResources().getDimensionPixelSize(var1) : 0;
+    @SuppressLint({"DiscouragedApi", "InternalInsetResource"})
+    private static int getStatusBarHeight(Context context) {
+        int statusBarHeight = context.getResources().getIdentifier("status_bar_height", "dimen", "android");
+        return statusBarHeight > 0 ? context.getResources().getDimensionPixelSize(statusBarHeight) : 0;
     }
-
-
 }

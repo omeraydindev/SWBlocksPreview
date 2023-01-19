@@ -255,7 +255,7 @@ public class mq {
 
     public static ArrayList<Gx> a(String spec) {
         ArrayList<Gx> paramClass = new ArrayList<>();
-        ArrayList<String> specList = StringUtils.c(spec);
+        ArrayList<String> specList = StringUtils.tokenize(spec);
         for (String params : specList) {
             if (params.charAt(0) == '%' && params.length() >= 2) {
                 String type = String.valueOf(params.charAt(1));

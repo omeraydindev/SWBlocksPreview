@@ -3,26 +3,22 @@ package ma.swblockspreview.editor;
 import android.content.Context;
 import android.util.AttributeSet;
 
-import ma.swblockspreview.BlockPreviewer;
 import ma.swblockspreview.editor.logic.BlockPane;
 import ma.swblockspreview.editor.view.LogicEditorScrollView;
 
 public class ViewBlockCollectionEditor extends LogicEditorScrollView {
-    private final BlockPreviewer blockPreviewer;
     public Context i;
     public BlockPane j;
     public boolean k = true;
     public int[] l = new int[2];
 
-    public ViewBlockCollectionEditor(BlockPreviewer blockPreviewer, Context var1) {
+    public ViewBlockCollectionEditor(Context var1) {
         super(var1);
-        this.blockPreviewer = blockPreviewer;
         aa(var1);
     }
 
-    public ViewBlockCollectionEditor(BlockPreviewer blockPreviewer, Context var1, AttributeSet var2) {
+    public ViewBlockCollectionEditor(Context var1, AttributeSet var2) {
         super(var1, var2);
-        this.blockPreviewer = blockPreviewer;
         aa(var1);
     }
 

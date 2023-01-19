@@ -27,7 +27,7 @@ public class BlockPreviewer {
     }
 
     public void previewInto(ViewGroup container, ArrayList<BlockBean> blocks) {
-        viewBlockCollectionEditor = new ViewBlockCollectionEditor(this, context);
+        viewBlockCollectionEditor = new ViewBlockCollectionEditor(context);
         viewBlockCollectionEditor.setScrollEnabled(true);
         blockPane = viewBlockCollectionEditor.getBlockPane();
 

@@ -2,47 +2,46 @@ package ma.swblockspreview.editor;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.ViewGroup;
 
-import ma.swblockspreview.BlockPreviewer;
 import ma.swblockspreview.editor.logic.BlockPane;
 import ma.swblockspreview.editor.view.LogicEditorScrollView;
 
 public class ViewBlockCollectionEditor extends LogicEditorScrollView {
-    private final BlockPreviewer blockPreviewer;
-    public Context i;
-    public BlockPane j;
-    public boolean k = true;
-    public int[] l = new int[2];
+    private Context context;
+    private BlockPane blockPane;
+    private boolean k = true;
 
-    public ViewBlockCollectionEditor(BlockPreviewer blockPreviewer, Context var1) {
-        super(var1);
-        this.blockPreviewer = blockPreviewer;
-        aa(var1);
+    public ViewBlockCollectionEditor(Context context) {
+        super(context);
+        initialize(context);
     }
 
-    public ViewBlockCollectionEditor(BlockPreviewer blockPreviewer, Context var1, AttributeSet var2) {
-        super(var1, var2);
-        this.blockPreviewer = blockPreviewer;
-        aa(var1);
+    public ViewBlockCollectionEditor(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        initialize(context);
     }
 
-    private void aa(Context var1) {
-        i = var1;
-        j = new BlockPane(i);
-        j.setLayoutParams(new LayoutParams(-2, -2));
-        addView(j);
+    private void initialize(Context context) {
+        this.context = context;
+        blockPane = new BlockPane(this.context);
+        blockPane.setLayoutParams(new LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT));
+        addView(blockPane);
     }
 
     public BlockPane getBlockPane() {
-        return j;
+        return blockPane;
     }
 
-    public void onLayout(boolean var1, int var2, int var3, int var4, int var5) {
-        super.onLayout(var1, var2, var3, var4, var5);
+    @Override
+    public void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        super.onLayout(changed, left, top, right, bottom);
         if (k) {
-            j.getLayoutParams().width = var4 - var2;
-            j.getLayoutParams().height = var5 - var3;
-            j.b();
+            blockPane.getLayoutParams().width = right - left;
+            blockPane.getLayoutParams().height = bottom - top;
+            blockPane.b();
             k = false;
         }
 

@@ -119,10 +119,7 @@ public class Ss extends Ts {
         if (b.length() <= 0) {
             return b;
         }
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(b);
-        stringBuilder.append(" : ");
-        return stringBuilder.toString();
+        return b + " : ";
     }
 
     public final TextView b(String str) {

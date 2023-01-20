@@ -1,249 +1,106 @@
 package ma.swblockspreview.util;
 
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.content.Context;
-
-import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Random;
 
 public class StringUtils {
 
-
     public static class StringTokenizer {
-        public String a;
-        public int b;
+        public String src;
+        public int index;
 
-        public StringTokenizer(String var1) {
-            a = var1;
-            b = 0;
+        public StringTokenizer(String text) {
+            src = text;
+            index = 0;
         }
 
-        public boolean a() {
-            return b >= a.length();
+        public boolean atEnd() {
+            return index >= src.length();
         }
 
-        public String b() {
-            c();
-            boolean var1 = a();
-            String var2 = "";
-            if (var1) {
-                return var2;
-            } else {
-                boolean var3 = false;
-                int var4 = b;
+        public String nextToken() {
+            skipWhiteSpace();
+            boolean atEnd = atEnd();
+            StringBuilder stringBuilder = new StringBuilder();
+            if (!atEnd) {
+                boolean isArg = false;
+                int startIndex = index;
 
-                while (b < a.length()) {
-                    if (a.charAt(b) == 32) {
-                        return var2;
+                while (index < src.length()) {
+                    if (src.charAt(index) == 32) {
+                        return stringBuilder.toString();
                     }
 
-                    char var5 = a.charAt(b);
+                    char var5 = src.charAt(index);
                     if (var5 == 92) {
-                        StringBuilder var6 = new StringBuilder();
-                        var6.append(var2);
-                        var6.append(var5 + a.charAt(1 + b));
-                        var2 = var6.toString();
-                        b += 2;
+                        stringBuilder.append(var5 + src.charAt(1 + index));
+                        index += 2;
                     } else {
                         if (var5 == 37) {
-                            if (b > var4) {
-                                return var2;
+                            if (index > startIndex) {
+                                return stringBuilder.toString();
                             }
 
-                            var3 = true;
+                            isArg = true;
                         }
 
-                        if (var3) {
+                        if (isArg) {
                             if (var5 == 63) {
                                 break;
                             }
 
                             if (var5 == 45) {
-                                return var2;
+                                return stringBuilder.toString();
                             }
                         }
 
-                        StringBuilder var9 = new StringBuilder();
-                        var9.append(var2);
-                        var9.append(var5);
-                        var2 = var9.toString();
-                        ++b;
+                        String var9 = String.valueOf(stringBuilder) + var5;
+                        stringBuilder = new StringBuilder(var9);
+                        ++index;
                     }
                 }
 
-                return var2;
             }
+            return stringBuilder.toString();
         }
 
-        public void c() {
-            while (b < a.length() && a.charAt(b) == 32) {
-                ++b;
+        public void skipWhiteSpace() {
+            while (index < src.length() && src.charAt(index) == 32) {
+                ++index;
             }
-
         }
     }
 
 
-    public static int a(char var0) {
-        if (var0 >= 48 && var0 <= 57) {
-            return var0 - 48;
-        } else {
-            byte var1 = 65;
-            if (var0 < var1 || var0 > 70) {
-                var1 = 97;
-                if (var0 < var1 || var0 > 102) {
-                    StringBuilder var2 = new StringBuilder("invalid hex digit '");
-                    var2.append(var0);
-                    var2.append("'");
-                    throw new IllegalArgumentException(var2.toString());
-                }
+    public static ArrayList<String> tokenize(String text) {
+        ArrayList<String> tokenList = new ArrayList<>();
+        StringTokenizer stringTokenizer = new StringTokenizer(text);
+
+        while (!stringTokenizer.atEnd()) {
+            String nextToken = stringTokenizer.nextToken();
+            if (nextToken.length() > 0) {
+                tokenList.add(nextToken);
             }
-
-            return 10 + (var0 - var1);
-        }
-    }
-
-    public static String a() {
-        Random var0 = new Random();
-
-        int var1;
-        for (var1 = var0.nextInt(100000); var1 < 10000 || var1 > 99999; var1 = var0.nextInt(100000)) {
         }
 
-        return String.valueOf(var1);
+        return tokenList;
     }
 
-    public static String a(int var0) {
-        if (var0 < 0) {
-            return "0";
-        } else {
-            float var1 = (float) var0;
-            if (var1 >= 1024.0F && var1 < 1048576.0F) {
-                float var7 = var1 / 1024.0F;
-                return (new DecimalFormat("#.#KB")).format(var7);
-            } else if (var1 >= 1048576.0F && var1 < 1.07374182E9F) {
-                float var6 = var1 / 1048576.0F;
-                return (new DecimalFormat("#.#MB")).format(var6);
-            } else if (var1 >= 1.07374182E9F && var1 < 1.09951163E12F) {
-                float var5 = var1 / 1.07374182E9F;
-                return (new DecimalFormat("#.#GB")).format(var5);
+    public static String unescape(String text) {
+        StringBuilder stringBuilder = new StringBuilder();
+
+        for (int i = 0; i < text.length(); ++i) {
+            char charAt = text.charAt(i);
+            if (charAt == 92) {
+                StringBuilder sb = new StringBuilder();
+                sb.append(stringBuilder);
+                ++i;
+                sb.append(text.charAt(i));
+                stringBuilder = new StringBuilder(sb.toString());
             } else {
-                StringBuilder var2 = new StringBuilder();
-                var2.append(var0);
-                var2.append("B");
-                return var2.toString();
-            }
-        }
-    }
-
-    public static String a(byte[] var0) {
-        StringBuffer var1 = new StringBuffer(2 * var0.length);
-
-        for (int var2 = 0; var2 < var0.length; ++var2) {
-            if ((255 & var0[var2]) < 16) {
-                var1.append("0");
-            }
-
-            var1.append(Long.toString(255 & var0[var2], 16));
-        }
-
-        return var1.toString();
-    }
-
-    public static void a(Context var0, String var1, String var2) {
-        ((ClipboardManager) var0.getSystemService(Context.CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText(var1, var2));
-    }
-
-    public static byte[] a(String var0) {
-        int var1 = var0.length();
-        byte[] var2 = new byte[(var1 + 1) / 2];
-        int var3 = var1 % 2;
-        int var4 = 0;
-        int var5 = 1;
-        if (var3 == var5) {
-            var2[0] = (byte) a(var0.charAt(0));
-            var4 = 1;
-        } else {
-            var5 = 0;
-        }
-
-        while (var4 < var1) {
-            int var6 = var5 + 1;
-            int var7 = var4 + 1;
-            int var8 = a(var0.charAt(var4)) << 4;
-            int var9 = var7 + 1;
-            var2[var5] = (byte) (var8 | a(var0.charAt(var7)));
-            var5 = var6;
-            var4 = var9;
-        }
-
-        return var2;
-    }
-
-    public static String b(int var0) {
-        float var1 = (float) var0;
-        if (var1 >= 1000.0F && var1 < 1000000.0F) {
-            float var4 = var1 / 1000.0F;
-            return (new DecimalFormat("#.#K")).format(var4);
-        } else if (var1 >= 1000000.0F && var1 < 1.0E9F) {
-            float var3 = var1 / 1000000.0F;
-            return (new DecimalFormat("#.#M")).format(var3);
-        } else if (var1 >= 1.0E9F && var1 < 1.0E12F) {
-            float var2 = var1 / 1.0E9F;
-            return (new DecimalFormat("#.#G")).format(var2);
-        } else {
-            return String.valueOf(var0);
-        }
-    }
-
-    public static boolean b(String var0) {
-        try {
-            Double.parseDouble(var0);
-            return true;
-        } catch (NumberFormatException var1) {
-            return false;
-        }
-    }
-
-    public static String c(int var0) {
-        return (new DecimalFormat("#,###")).format(var0);
-    }
-
-    public static ArrayList c(String var0) {
-        ArrayList var1 = new ArrayList();
-        StringTokenizer var2 = new StringTokenizer(var0);
-
-        while (!var2.a()) {
-            String var3 = var2.b();
-            if (var3.length() > 0) {
-                var1.add(var3);
+                stringBuilder.append(charAt);
             }
         }
 
-        return var1;
-    }
-
-    public static String d(String var0) {
-        String var1 = "";
-
-        for (int var2 = 0; var2 < var0.length(); ++var2) {
-            char var3 = var0.charAt(var2);
-            if (var3 == 92) {
-                StringBuilder var4 = new StringBuilder();
-                var4.append(var1);
-                ++var2;
-                var4.append(var0.charAt(var2));
-                var1 = var4.toString();
-            } else {
-                StringBuilder var7 = new StringBuilder();
-                var7.append(var1);
-                var7.append(var3);
-                var1 = var7.toString();
-            }
-        }
-
-        return var1;
+        return stringBuilder.toString();
     }
 }

@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 import ma.swblockspreview.bean.BlockBean;
 import ma.swblockspreview.editor.logic.BlockPane;
@@ -17,7 +16,7 @@ import ma.swblockspreview.util.kq;
 public class Rs extends Ts {
     public String T;
     public String U;
-    public ArrayList V;
+    public ArrayList<View> V;
     public int W = 30;
     public int aa = 50;
     public int ba = 90;
@@ -29,8 +28,8 @@ public class Rs extends Ts {
     public int ha = -1;
     public int ia = -1;
     public int ja = -1;
-    public ArrayList ka = new ArrayList();
-    public ArrayList la = new ArrayList();
+    public ArrayList<View> ka = new ArrayList<>();
+    public ArrayList<String> la = new ArrayList<>();
     public TextView ma = null;
     public int na = 0;
     public int oa = 0;
@@ -65,11 +64,7 @@ public class Rs extends Ts {
         if (U.equals("getVar") || U.equals("getArg")) {
             String var3 = super.c;
             if (var3 != null && var3.length() > 0) {
-                StringBuilder var5 = new StringBuilder();
-                var5.append(super.c);
-                var5.append(" : ");
-                var5.append(var1);
-                var1 = var5.toString();
+                var1 = super.c + " : " + var1;
             }
         }
 
@@ -127,12 +122,12 @@ public class Rs extends Ts {
     }
 
     public final void a(String var1, int var2) {
-        ArrayList var3 = StringUtils.c(var1);
-        ka = new ArrayList();
-        la = new ArrayList();
+        ArrayList<String> var3 = StringUtils.tokenize(var1);
+        ka = new ArrayList<>();
+        la = new ArrayList<>();
 
         for (int var4 = 0; var4 < var3.size(); ++var4) {
-            View var5 = b((String) var3.get(var4), var2);
+            View var5 = b(var3.get(var4), var2);
             if (var5 instanceof Ts) {
                 ((Ts) var5).E = this;
             }
@@ -140,7 +135,7 @@ public class Rs extends Ts {
             ka.add(var5);
             String var7;
             if (var5 instanceof Ss) {
-                var7 = (String) var3.get(var4);
+                var7 = var3.get(var4);
             } else {
                 var7 = "icon";
             }
@@ -180,7 +175,7 @@ public class Rs extends Ts {
             }
         }
 
-        return a(StringUtils.d(var1));
+        return a(StringUtils.unescape(var1));
     }
 
     public void b(Rs var1) {
@@ -259,7 +254,7 @@ public class Rs extends Ts {
 
             var1.qa = "";
             var1.ra = "";
-            View var3 = b((String) la.get(var2), super.e);
+            View var3 = b(la.get(var2), super.e);
             if (var3 instanceof Ts) {
                 ((Ts) var3).E = this;
             }
@@ -273,16 +268,14 @@ public class Rs extends Ts {
         p().k();
     }
 
-    public ArrayList getAllChildren() {
-        ArrayList var1 = new ArrayList();
+    public ArrayList<Rs> getAllChildren() {
+        ArrayList<Rs> var1 = new ArrayList<>();
         Rs var2 = this;
 
         while (true) {
             var1.add(var2);
-            Iterator var4 = var2.ka.iterator();
 
-            while (var4.hasNext()) {
-                View var10 = (View) var4.next();
+            for (View var10 : var2.ka) {
                 if (var10 instanceof Rs) {
                     var1.addAll(((Rs) var10).getAllChildren());
                 }
@@ -314,18 +307,14 @@ public class Rs extends Ts {
     public BlockBean getBean() {
         BlockBean var1 = new BlockBean(getTag().toString(), T, super.b, super.c, U);
         var1.color = super.e;
-        Iterator var2 = V.iterator();
 
-        while (var2.hasNext()) {
-            View var3 = (View) var2.next();
+        for (View var3 : V) {
             if (var3 instanceof Ss) {
                 var1.parameters.add(((Ss) var3).getArgValue().toString());
             } else if (var3 instanceof Rs) {
-                ArrayList var4 = var1.parameters;
-                StringBuilder var5 = new StringBuilder();
-                var5.append("@");
-                var5.append(var3.getTag().toString());
-                var4.add(var5.toString());
+                ArrayList<String> var4 = var1.parameters;
+                String var5 = "@" + var3.getTag().toString();
+                var4.add(var5);
             }
         }
 
@@ -415,10 +404,10 @@ public class Rs extends Ts {
     }
 
     public final void i() {
-        V = new ArrayList();
+        V = new ArrayList<>();
 
         for (int var1 = 0; var1 < ka.size(); ++var1) {
-            View var2 = (View) ka.get(var1);
+            View var2 = ka.get(var1);
             if (var2 instanceof Rs || var2 instanceof Ss) {
                 V.add(var2);
             }
@@ -441,7 +430,7 @@ public class Rs extends Ts {
         int var1 = super.w;
 
         for (int var2 = 0; var2 < ka.size(); ++var2) {
-            View var12 = (View) ka.get(var2);
+            View var12 = ka.get(var2);
             var12.bringToFront();
             boolean var13 = var12 instanceof Rs;
             if (var13) {
@@ -680,7 +669,7 @@ public class Rs extends Ts {
         int var1 = super.w;
 
         for (int var2 = 0; var2 < ka.size(); ++var2) {
-            View var4 = (View) ka.get(var2);
+            View var4 = ka.get(var2);
             int var5;
             if (la.get(var2).equals("label")) {
                 var5 = a((TextView) var4);
@@ -726,10 +715,8 @@ public class Rs extends Ts {
     public void o() {
         for (Rs var1 = this; var1 != null; var1 = var1.E) {
             int var2 = 0;
-            Iterator var3 = var1.V.iterator();
 
-            while (var3.hasNext()) {
-                View var4 = (View) var3.next();
+            for (View var4 : var1.V) {
                 if (var4 instanceof Rs) {
                     var2 = Math.max(var2, 1 + ((Rs) var4).na);
                 }
@@ -765,10 +752,9 @@ public class Rs extends Ts {
         T = var1;
         removeAllViews();
         a(T, super.e);
-        Iterator var2 = ka.iterator();
 
-        while (var2.hasNext()) {
-            addView((View) var2.next());
+        for (View view : ka) {
+            addView(view);
         }
 
         i();
